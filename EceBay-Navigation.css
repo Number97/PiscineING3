@@ -1,0 +1,9 @@
+﻿.navdescription{
+    font-size: 10px;
+}
+
+.img-thumbnail-pic {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
