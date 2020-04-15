@@ -66,173 +66,194 @@
         
         <div class="container">
             <br><br>
-			<h1 class="text-center">Navigation</h1>
-            <p>Cliquez sur un item pour plus d'informations.</p>
+            <h1 class="text-center">Navigation</h1>
+            <div class="form-row" style="margin: 15px;">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                </form>
+            </div>
+            <div>
+                <div>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Feraille ou Trésor
+                    </label>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Bon pour le Musée
+                    </label>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Accessoire VIP
+                    </label>
+                </div>
+                <div>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Enchères
+                    </label>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Meilleure Offre
+                    </label>
+                    <label class="btn btn-info active">
+                        <input type="checkbox" autocomplete="off"> Achat immédiat
+                    </label>
+                </div>
+            </div>
+            <div>
+                <form style="margin: 10px;">
+                    <button class="btn btn-primary">Filtrer</button>
+                </form>
+            </div>
 				
             <div class="row">
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article1.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article1.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 1</div>
+                    <img src="Articles/Article1.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-success">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
                 </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article2.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article2.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 2</div>
+                    <img src="Articles/Article2.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn" disabled><br><br></button>
+                    <button type="button" class="btn btn-outline-danger">Meilleure<br>offre</button>
                 </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article3.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article3.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 3</div>
+                    <img src="Articles/Article3.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn" disabled><br><br></button>
+                    <button type="button" class="btn btn-outline-success">Achat immédiat<br>3400€</button>
+                </div>
+            </div>
+            <br>	
+            <div class="row">
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 4</div>
+                    <img src="Articles/Article4.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn" disabled><br><br></button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 5</div>
+                    <img src="Articles/Article5.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                        <button type="button" class="btn btn-outline-success">Achat immédiat<br>500€</button>
+                        <button type="button" class="btn btn-outline-danger">Meilleure<br>offre</button>
+                    </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 6</div>
+                    <img src="Articles/Article6.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn" disabled><br><br></button>
+                    <button type="button" class="btn btn-outline-danger">Meilleure<br>offre</button>
+                </div>
+            </div>
+            <br>	
+            <div class="row">
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 7</div>
+                    <img src="Articles/Article7.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 8</div>
+                    <img src="Articles/Article8.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 9</div>
+                    <img src="Articles/Article9.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+            </div>
+            <br>	
+            <div class="row">
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 10</div>
+                    <img src="Articles/Article10.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 11</div>
+                    <img src="Articles/Article11.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 12</div>
+                    <img src="Articles/Article12.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+            </div>
+            <br>	
+            <div class="row">
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 13</div>
+                    <img src="Articles/Article13.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 14</div>
+                    <img src="Articles/Article14.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
+                </div>
+                <div class="card" style="max-width: 300px;margin: auto;">
+                    <div style="font-size: 20px" class="card-header">Article 15</div>
+                    <img src="Articles/Article15.jpeg" style="object-fit: cover;height: 200px;">
+                    <div class="card-body">
+                        <p class="card-text">Courte description de l'article, date de fabrication, fonctions, catégorie.</article></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-primary">Enchérir<br>À partir de 200€</button>
                 </div>
             </div>
             <br>
-            <div class="row">
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article4.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article4.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article5.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article5.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article6.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article6.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article7.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article7.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article8.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article8.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article9.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article9.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article10.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article10.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article11.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article11.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article12.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article12.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article13.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article13.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article14.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article14.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-lg-4" >
-                    <div class="img-thumbnail">
-                        <a href="Articles/Article15.jpeg" class="img-thumbnail-pic"> 
-                            <img src="Articles/Article15.jpeg" width=100% height=100%>
-                        </a>
-                        <div class="caption"> 
-                            <p>Description courte de l'article. Description courte de l'article. </p>
-                        </div>
-                    </div> 
-                </div>
-            </div>
+
         </div>
     </body>
 </html>
