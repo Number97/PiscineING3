@@ -1,0 +1,251 @@
+<!--
+
+    Pierre HERDUIN & Ernest POPOVICI TD03
+    Projet Piscine Web Dynamique
+    15/04/2020
+
+    Cette page html a été créé dans le cadre du projet Piscine de Web Dynamique et n'a aucun but commercial
+
+-->
+
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>ECEBAY</title>
+		<meta charset="utf-8">
+
+		<!--Controle de la mise en page sur les navigateurs mobiles-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!---------------------JQuery - JavaScript--------------------->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!------------------------Bootstrap CSS------------------------>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
+
+        <!-------------------------Custom CSS-------------------------->
+        <link rel="stylesheet" type="text/css" href="EceBay-Accueil.css">
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="EceBay-Navigation.html">Navigation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="EceBay-Admin.html">Admin<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <br><br>
+            <h1 class="text-center">Tous les vendeurs</h1>
+            <div class="form-row" style="margin: 15px;">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                </form>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <a style="font-size: 50px;margin: auto;" class="btn btn-info" href="EceBay-Admin-AjouterVendeur.html" role="button">Ajouter un vendeur</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 1 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 2 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 3 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 4 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 5 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 6 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-10"  style="font-size: 20px;text-align: center;" >
+                                <p class="card-text"><br>Vendeur 7 (avec details)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+            
+            <br><br><br><br>
+        </div>
+    </body>
+</html>
+
+
+
+<!--
+    Sources:
+    https://getbootstrap.com/docs/4.0/getting-started/introduction/
+    https://www.w3schools.com/cssref/pr_background-color.asp
+    https://getbootstrap.com/docs/4.0/components/navbar/
+-->
