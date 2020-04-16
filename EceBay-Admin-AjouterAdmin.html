@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Accueil.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-MonCompte-CreationCompteAcheteur.css">
 
     </head>
     <body>
@@ -51,19 +51,32 @@
 
         <div class="container">
             <br><br><br>
-            <h1 style="font-size: 80px;" class="text-center">Admin</h1><br><br><br>
-				
-            <div class="row" style="align-items: center;">
-                <div class="col">
-                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Items.html" role="button">Articles</a>
+            <h1 style="font-size: 80px;" class="text-center">Création compte Vendeur</h1><br><br><br>
+            <h1 class="text-center">Informations Personnelles</h1>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Adresse email ECE</label>
+                    <input type="email" class="form-control" placeholder="Introduire email">
+                    <small id="emailHelp" class="form-text text-muted">On enverra un mail au vendeur poiur qu'il finisse de creer son compte.</small>
                 </div>
-                <div class="col">
-                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Vendeurs.html" role="button">Vendeurs</a>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom</label>
+                    <input type="email" class="form-control" placeholder="Nom">
                 </div>
-                <div class="col">
-                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Admins.html" role="button">Admins</a>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Prénom</label>
+                    <input type="email" class="form-control" placeholder="Prénom">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Pseudo</label>
+                    <input type="email" class="form-control" placeholder="Pseudo">
+                </div>
+            </form>
+
+            <form>
+                <button style="font-size: 30px;" type="submit" class="btn btn-primary">Création du compte</button>
+            </form>
+            <br><br><br>
         </div>
     </body>
 </html>
