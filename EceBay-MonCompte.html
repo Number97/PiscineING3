@@ -51,12 +51,63 @@
             <h1 style="font-size: 80px;" class="text-center">Connection en tant que</h1><br><br><br>
 				
             <div class="row">
-                <button style="font-size: 50px;margin: auto;" type="button" class="btn btn-dark">Acheteur</button>
-                <button style="font-size: 50px;margin: auto;" type="button" class="btn btn-dark">Vendeur</button>
-                <button style="font-size: 50px;margin: auto;" type="button" class="btn btn-dark">Admin</button>
+                <a style="font-size: 50px;margin: auto;" class="btn btn-dark" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Acheteur</a>
+                <button style="font-size: 50px;margin: auto;" class="btn btn-dark" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Vendeur</button>
+                <button style="font-size: 50px;margin: auto;" class="btn btn-dark" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample2">Admin</button>
             </div>
             <div class="row">
-                <a style="font-size: 10px;margin: left;margin-left: 100px;" class="btn btn-secondary" href="EceBay-MonCompte-CreationCompteAcheteur.html" role="button">Créer un compte Acheteur</a>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                            <!-- Login Form -->
+                            <form>
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input type="submit" class="fadeIn fourth" value="Connexion">
+                            </form>
+                        
+                            <!-- Remind Passowrd -->
+                            <div id="formFooter">
+                                <a class="underlineHover" href="#">Recupérez votre mot de passe</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a style="font-size: 10px;margin: left;margin-left: 100px;" class="btn btn-secondary" href="EceBay-MonCompte-CreationCompteAcheteur.html" role="button">Créer un compte Acheteur</a>
+                </div>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                        <div class="card card-body">
+                            <!-- Login Form -->
+                            <form>
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input type="submit" class="fadeIn fourth" value="Connexion">
+                            </form>
+                        
+                            <!-- Remind Passowrd -->
+                            <div id="formFooter">
+                                <a class="underlineHover" href="#">Recupérez votre mot de passe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample3">
+                        <div class="card card-body">
+                            <!-- Login Form -->
+                            <form>
+                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input type="submit" class="fadeIn fourth" value="Connexion">
+                            </form>
+                        
+                            <!-- Remind Passowrd -->
+                            <div id="formFooter">
+                                <a class="underlineHover" href="#">Recupérez votre mot de passe</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </body>
 </html>
@@ -68,4 +119,6 @@
     https://getbootstrap.com/docs/4.0/getting-started/introduction/
     https://www.w3schools.com/cssref/pr_background-color.asp
     https://getbootstrap.com/docs/4.0/components/navbar/
+    https://bootsnipp.com/snippets/dldxB
+    https://getbootstrap.com/docs/4.4/components/collapse/
 -->
