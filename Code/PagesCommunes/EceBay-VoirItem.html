@@ -25,36 +25,36 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Accueil.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-VoirItem.css">
 
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.html">Accueil<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.html">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="EceBay-Navigation.html">Navigation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="../MonCompte/EceBay-MonCompte.html">Votre compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Panier.html">Panier
+                        <a class="nav-link" href="../Acheteur/EceBay-Panier.html">Panier
                             <br>
                             <p class="navdescription">(si connecté en tant qu'Acheteur)</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Vendre.html">Vendre
+                        <a class="nav-link" href="../Vendeur/EceBay-Vendre.html">Vendre
                             <br>
                             <p class="navdescription">(si connecté en tant que Vendeur)</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Admin.html">Admin
+                        <a class="nav-link" href="../Admin/EceBay-Admin.html">Admin
                             <br>
                             <p class="navdescription">(si connecté en tant qu'Admin)</p>
                         </a>
@@ -62,8 +62,18 @@
                 </ul>
             </div>
         </nav>
-        <br><br><br><br><br><br><br>
-        <h1 class="text-center" style="font-size: 200px;">Bienvenue!</h1>
+        <div class="container">
+            <br><br>
+            <h1 class="text-center">Article 1</h1>
+            <div class="card">
+                <img src="../Articles/Article1.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <p class="card-text">Description de l'article.</p>
+                    <button type="button" class="btn btn-outline-success">Achat immédiat<br>500€</button>
+                    <button type="button" class="btn btn-outline-danger">Meilleure<br>offre</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
 

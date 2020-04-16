@@ -13,6 +13,7 @@
 	<head> 
 		<title>ECEBAY</title>
 		<meta charset="utf-8">
+
 		<!--Controle de la mise en page sur les navigateurs mobiles-->
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,7 +26,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Accueil.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-Admin-AjouterAdmin.css">
 
     </head>
     <body>
@@ -33,46 +34,49 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.html">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.html">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Navigation.html">Navigation</a>
+                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="../MonCompte/EceBay-MonCompte.html">Votre compte</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Panier.html">Panier
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Acheteur)</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Vendre.html">Vendre
-                            <br>
-                            <p class="navdescription">(si connecté en tant que Vendeur)</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="EceBay-Admin.html">Admin
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Admin)</p>
-                        </a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="EceBay-Admin.html">Admin<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
+
         <div class="container">
-            <br><br>
-            <h1 class="text-center">Article 1</h1>
-            <div class="card">
-                <img src="Articles/Article1.jpeg" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">Description de l'article.</p>
-                    <button type="button" class="btn btn-outline-success">Achat immédiat<br>500€</button>
-                    <button type="button" class="btn btn-outline-danger">Meilleure<br>offre</button>
+            <br><br><br>
+            <h1 style="font-size: 80px;" class="text-center">Création compte Admin</h1><br><br><br>
+            <h1 class="text-center">Informations Personnelles</h1>
+            <form>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Adresse email ECE</label>
+                    <input type="email" class="form-control" placeholder="Introduire email">
+                    <small id="emailHelp" class="form-text text-muted">On enverra un mail au vendeur poiur qu'il finisse de creer son compte.</small>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Nom</label>
+                    <input type="email" class="form-control" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Prénom</label>
+                    <input type="email" class="form-control" placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Pseudo</label>
+                    <input type="email" class="form-control" placeholder="Pseudo">
+                </div>
+            </form>
+
+            <form>
+                <button style="font-size: 30px;" type="submit" class="btn btn-primary">Création du compte</button>
+            </form>
+            <br><br><br>
         </div>
     </body>
 </html>
@@ -84,6 +88,4 @@
     https://getbootstrap.com/docs/4.0/getting-started/introduction/
     https://www.w3schools.com/cssref/pr_background-color.asp
     https://getbootstrap.com/docs/4.0/components/navbar/
-    https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp
-    https://www.w3schools.com/howto/howto_js_image_grid.asp
 -->
