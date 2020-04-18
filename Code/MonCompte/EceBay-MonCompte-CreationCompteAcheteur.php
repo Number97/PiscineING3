@@ -28,6 +28,10 @@
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-MonCompte-CreationCompteAcheteur.css">
 
+        <!--------------------------PHP inclusion---------------------->
+        <?php
+            include("PHP-CreationCompteAcheteur.php");
+        ?>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
