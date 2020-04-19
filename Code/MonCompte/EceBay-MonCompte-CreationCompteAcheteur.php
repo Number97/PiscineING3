@@ -18,7 +18,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!---------------------JQuery - JavaScript--------------------->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
@@ -28,10 +28,9 @@
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-MonCompte-CreationCompteAcheteur.css">
 
-        <!--------------------------PHP inclusion---------------------->
-        <?php
-            include("PHP-CreationCompteAcheteur.php");
-        ?>
+        <!-------------------------Custom JS--------------------------->
+        <script src="JS-CreationCompteAcheteur.js" type="text/javascript"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
@@ -58,77 +57,77 @@
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email ECE</label>
-                    <input type="email" class="form-control" placeholder="Introduire email">
+                    <input id="email-input" type="email" class="form-control" placeholder="Introduire email">
                     <small id="emailHelp" class="form-text text-muted">On ne partagera votre email avec personne.</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nom</label>
-                    <input type="email" class="form-control" placeholder="Votre nom">
+                    <input id="nom-input" type="email" class="form-control" placeholder="Votre nom">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Prénom</label>
-                    <input type="email" class="form-control" placeholder="Votre prénom">
+                    <input id="prenom-input" type="email" class="form-control" placeholder="Votre prénom">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" placeholder="Mot de passe">
+                    <input id="password-input" type="password" class="form-control" placeholder="Mot de passe">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="Comfirmez votre mot de passe" placeholder="Confirmation mot de passe">
+                    <input id="password-input-repeat" type="password" class="form-control" id="Comfirmez votre mot de passe" placeholder="Confirmation mot de passe">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse ligne 1</label>
-                    <input type="email" class="form-control" placeholder="Introduire adresse ligne 1">
+                    <input id="adresse1-input" type="email" class="form-control" placeholder="Introduire adresse ligne 1">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse ligne 2</label>
-                    <input type="email" class="form-control" placeholder="Introduire adresse ligne 2">
+                    <input id="adresse2-input" type="email" class="form-control" placeholder="Introduire adresse ligne 2">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Ville</label>
-                    <input type="email" class="form-control" placeholder="Introduire ville">
+                    <input id="ville-input" type="email" class="form-control" placeholder="Introduire ville">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Code postal</label>
-                    <input type="email" class="form-control" placeholder="Introduire code postal">
+                    <input id="codePostal-input" type="email" class="form-control" placeholder="Introduire code postal">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Pays</label>
-                    <input type="email" class="form-control" placeholder="Introduire pays">
+                    <input id="pays-input" type="email" class="form-control" placeholder="Introduire pays">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Numéro de téléphone</label>
-                    <input type="email" class="form-control" placeholder="Votre numéro">
+                    <input id="telephone-input" type="email" class="form-control" placeholder="Votre numéro">
                 </div>
                 <button type="submit" class="btn btn-warning">Choisir image de fond </button>
             </form>
 
             <h1 class="text-center">Informations de Paiement</h1>
-            <form>
+            <form action="#" onsubmit="postAcheteurInfos();return false;">
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Choisir le type de carte</option>
-                        <option>Visa</option>
-                        <option>Mastercard</option>
-                        <option>American Express</option>
+                    <select id="typeCarte-input" class="form-control" id="exampleFormControlSelect1">
+                        <option value="1">Choisir le type de carte</option>
+                        <option value="2">Visa</option>
+                        <option value="3">Mastercard</option>
+                        <option value="4">American Express</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Numéro de carte</label>
-                    <input type="email" class="form-control" placeholder="Votre numéro">
+                    <input id="numeroCarte-input" type="text" class="form-control" placeholder="Votre numéro">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Nom tel que sur la carte</label>
-                    <input type="email" class="form-control" placeholder="Introduire nom tel que sur la carte">
+                    <input id="nomSurCarte-input" type="text" class="form-control" placeholder="Introduire nom tel que sur la carte">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Date d'expiration</label>
-                    <input type="email" class="form-control" placeholder="jj/mm/aaaa">
+                    <input id="expiration-input" type="text" class="form-control" placeholder="mm/aaaa">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Code de sécurité</label>
-                    <input type="email" class="form-control" placeholder="CVV/CVC">
+                    <input id="codeSecu-input" type="text" class="form-control" placeholder="CVV/CVC">
                 </div>
                 <button style="font-size: 30px;" type="submit" class="btn btn-primary">Création du compte</button>
             </form>
@@ -144,4 +143,6 @@
     https://getbootstrap.com/docs/4.0/getting-started/introduction/
     https://www.w3schools.com/cssref/pr_background-color.asp
     https://getbootstrap.com/docs/4.0/components/navbar/
+
+    https://www.codexpedia.com/javascript/submitting-html-form-without-reload-the-page/
 -->
