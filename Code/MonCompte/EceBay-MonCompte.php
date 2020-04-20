@@ -55,9 +55,6 @@ if (!empty($_SESSION["type"])) {
 
     </head>
     <body>
-        <?php
-        print_r($_SESSION);
-        ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
