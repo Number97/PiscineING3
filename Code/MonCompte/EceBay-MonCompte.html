@@ -28,6 +28,9 @@
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-MonCompte.css">
 
+        <!-------------------------Custom JS--------------------------->
+        <script src="JS-ConnexionCompteAcheteur.js" type="text/javascript"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
@@ -64,7 +67,7 @@
                             <form>
                                 <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
                                 <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
-                                <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" href="EceBay-MonCompte-Acheteur.html" role="button">Connexion</a>
+                                <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" onClick="connectAcheteur();" role="button">Connexion</a>
                             </form>
                         
                             <!-- Remind Passowrd -->

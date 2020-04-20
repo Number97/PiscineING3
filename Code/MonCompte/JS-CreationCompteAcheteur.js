@@ -140,7 +140,10 @@ function postAcheteurInfos() {
 		return;
 	}
 
-	var bg   = document.getElementById("background_name").value;
+	var bg   = document.getElementById("background_name").innerHTML;
+
+	if (bg.length == 0) bg = "null";
+
 	var acti = 1;
 
 	var sql = "insert into Client values (null,'" + mail + "','" + pass + "','" + nom + "','" + pren + "','" + adr1 + "',";
@@ -161,9 +164,10 @@ function postAcheteurInfos() {
 	 sql += acti + ")";
 
 	 var res;
-
+console.log(sql);
 	$.post("../PHP-POST.php", {"data" : sql}, function (data) {
 		res = data;
+		console.log(data);
 	});
 
 	if (res == "New record created") { // Success.

@@ -1,6 +1,6 @@
 <?php
 
-	include "../config.php";
+	include "config.php";
 
 	// Create connection to the server.
 	$conn = new mysqli($host, $user, $pass, $dBas);
@@ -37,4 +37,9 @@
 	// Close connection.
 	$conn->close();
 
+	/* 
+	Sources :
+	
+	https://www.w3schools.com/php/php_mysql_insert.asp
+	*/
 ?>
