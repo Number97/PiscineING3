@@ -105,7 +105,7 @@
                     <input id="telephone-input" type="text" class="form-control" placeholder="Votre numéro">
                 </div><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBackgroundChoice" aria-expanded="false" aria-controls="collapseExample">
                     Choisir fond d'ecran
-                    <small class="form-text text-muted"><span id="background_name"></span></small>
+                    <small class="form-text"><span id="background_name"></span></small>
                 </button>
                 <br>
                 <div class="collapse" id="collapseBackgroundChoice"><br>
