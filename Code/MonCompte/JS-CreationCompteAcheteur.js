@@ -162,7 +162,7 @@ function postAcheteurInfos() {
 
 	 var res;
 
-	$.post("PHP-CreationCompteAcheteur-POST.php", {"data" : sql}, function (data) {
+	$.post("../PHP-POST.php", {"data" : sql}, function (data) {
 		res = data;
 	});
 
