@@ -3,8 +3,6 @@ function postAcheteurInfos() {
 	var mail = document.getElementById("email-input").value;
 
 	if (mail.indexOf('@') == -1 || mail.match("edu.ece.fr") == null || mail.indexOf('@') == 0) { // Not valid.
-		// invalid("Veuillez entrer une adresse e-mail valide.");
-
 		$("#error-display").text("Veuillez entrer une adresse e-mail valide.");
 		document.getElementById("email-input").value = "";
 		window.scroll(0, 0);
@@ -112,7 +110,7 @@ function postAcheteurInfos() {
 
 	if (expr.length == 7) {
 		var m = expr.substring(0, 2);
-		var y = exprsubstring(3, 7);
+		var y = expr.substring(3, 7);
 		var b = true;
 
 		for (let i in m) {
@@ -145,27 +143,34 @@ function postAcheteurInfos() {
 	var bg   = "null";
 	var acti = 1;
 
-	expr = "2020-30-01";
-	adr2 = "null";
+	var sql = "insert into Client values (null,'" + mail + "','" + pass + "','" + nom + "','" + pren + "','" + adr1 + "',";
 
-	var sql = "insert into Client values (null,'" + mail + "','" + pass + "','" + nom + "','" + pren + "','" + adr1 + "','" + 
-			  adr2 + "','" + vill + "','" + codp + "','" + pays + "','" + tel + "','" + typc + "','" + numc + "','" + nomc + "','" +
-			  expr + "','" + codc + "','" + bg + "'," + acti + ")";
+	if (adr2 == "null") sql += "null,";
+	else sql += "'" + adr2 + "',"; 
+	
+	sql += "'" + vill + "','" + codp + "','" + pays + "',";
+
+	if (tel == "null") sql += "null,";
+	else sql += "'" + tel + "',";
+
+	 sql += "'" + typc + "','" + numc + "','" + nomc + "','" + expr + "','" + codc + "',";
+
+	 if (bg == "null") sql += "null,";
+	else sql += "'" + bg + "',";
+
+	 sql += acti + ")";
+
+	 var res;
 
 	$.post("PHP-CreationCompteAcheteur-POST.php", {"data" : sql}, function (data) {
-		console.log(data);
+		res = data;
 	});
 
-	// GET POUR RECEVOIR DES DONNEES DEPUIS LA BDD.
-	// $.get("PHP-CreationCompteAcheteur-GET.php", {"data" : sql}, function (data) {
-	// 	console.log(data);
-	// });
-}
-
-function invalid(str) {
-	$.post("EceBay-MonCompte-CreationCompteAcheteur.php", {"error" : str}, function () {
-		window.location.href = "EceBay-MonCompte-CreationCompteAcheteur.php";
-	});
+	if (res == "New record created") { // Success.
+		
+	} else {
+		
+	}
 }
 
 

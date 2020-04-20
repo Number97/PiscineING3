@@ -13,6 +13,9 @@
 	// Receive sql command.
 	$sql = $_REQUEST["data"];
 
+	// Execute query and get result.
+	$result = $conn->query($sql);
+
 	// Check wether result exists or not.
 	if ($result) {
 		if ($result->num_rows > 0) { // Check if rows have been returned.

@@ -13,9 +13,6 @@
 	// Receive sql command.
 	$sql = $_REQUEST["data"];
 
-	// Execute query and get result.
-	$result = $conn->query($sql);
-
 	// Check result of query
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created";
