@@ -181,6 +181,52 @@ console.log(sql);
 
 function background_click(clicked_id) {
 	document.getElementById("background_name").innerHTML = clicked_id;
+	if(clicked_id != "../Backgrounds/Abstract 1.jpeg")
+	{
+		document.getElementById("../Backgrounds/Abstract 1.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Abstract 2.jpeg")
+	{
+		document.getElementById("../Backgrounds/Abstract 2.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Abstract 3.jpeg")
+	{
+		document.getElementById("../Backgrounds/Abstract 3.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Abstract 4.jpeg")
+	{
+		document.getElementById("../Backgrounds/Abstract 4.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Abstract 5.jpeg")
+	{
+		document.getElementById("../Backgrounds/Abstract 5.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Colors.jpeg")
+	{
+		document.getElementById("../Backgrounds/Colors.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Sunset.jpeg")
+	{
+		document.getElementById("../Backgrounds/Sunset.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Pink Clouds.jpeg")
+	{
+		document.getElementById("../Backgrounds/Pink Clouds.jpeg").style.filter = "blur(0px)";
+
+	}
+	if(clicked_id != "../Backgrounds/Green Clouds.jpeg")
+	{
+		document.getElementById("../Backgrounds/Green Clouds.jpeg").style.filter = "blur(0px)";
+
+	}
+	document.getElementById(clicked_id).style.filter = "blur(10px)";
 }
 
 
