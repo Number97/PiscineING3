@@ -29,7 +29,7 @@ function ajust(str) {
 	return str;
 }
 
-function updateVendeurInfos() {
+function updateAdminInfos() {
 
 	var mail = document.getElementById("email-input").value;
 
