@@ -8,6 +8,10 @@
 
 -->
 
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 	<head> 
@@ -18,7 +22,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!---------------------JQuery - JavaScript--------------------->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
@@ -33,6 +37,9 @@
 
     </head>
     <body>
+        <?php
+        print_r($_SESSION);
+        ?>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -64,10 +71,11 @@
                     <div class="collapse multi-collapse" id="multiCollapseExample1">
                         <div class="card card-body">
                             <!-- Login Form -->
-                            <form>
-                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
-                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
-                                <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" onClick="connectAcheteur();" role="button">Connexion</a>
+                            <form action="#" onsubmit="connectAcheteur();return false;">
+                                <p id="error-acheteur" style="color:red"></p>
+                                <input type="text" id="login-acheteur" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="password" id="password-acheteur" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input style="font-size: 10px;margin: left;" type="submit" class="btn btn-secondary btn-lg btn-block" value="Connexion">
                             </form>
                         
                             <!-- Remind Passowrd -->
@@ -83,8 +91,8 @@
                         <div class="card card-body">
                             <!-- Login Form -->
                             <form>
-                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
-                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input type="text" id="login-vendeur" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="password" id="password-vendeur" class="fadeIn third" name="login" placeholder="Mot de passe">
                                 <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" href="EceBay-MonCompte-Vendeur.html" role="button">Connexion</a>
                             </form>
                         
@@ -100,8 +108,8 @@
                         <div class="card card-body">
                             <!-- Login Form -->
                             <form>
-                                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Utilisateur">
-                                <input type="text" id="password" class="fadeIn third" name="login" placeholder="Mot de passe">
+                                <input type="text" id="login-admin" class="fadeIn second" name="login" placeholder="Utilisateur">
+                                <input type="password" id="password-admin" class="fadeIn third" name="login" placeholder="Mot de passe">
                                 <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" href="EceBay-MonCompte-Admin.html" role="button">Connexion</a>
                             </form>
                         
