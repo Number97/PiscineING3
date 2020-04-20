@@ -140,7 +140,7 @@ function postAcheteurInfos() {
 		return;
 	}
 
-	var bg   = "null";
+	var bg   = document.getElementById("background_name").value;
 	var acti = 1;
 
 	var sql = "insert into Client values (null,'" + mail + "','" + pass + "','" + nom + "','" + pren + "','" + adr1 + "',";
@@ -173,6 +173,10 @@ function postAcheteurInfos() {
 		document.getElementById("email-input").value = "";
 		window.scroll(0, 0);
 	}
+}
+
+function background_click(clicked_id) {
+	document.getElementById("background_name").innerHTML = clicked_id;
 }
 
 
