@@ -113,17 +113,27 @@ function postAcheteurInfos() {
 	if (expr.length == 7) {
 		var m = expr.substring(0, 2);
 		var y = exprsubstring(3, 7);
-		var b = false;
+		var b = true;
 
-		for (let i in codc) {
+		for (let i in m) {
 			let c = tel[i];
 
 			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
-				document.getElementById("codeSecu-input").value = "";
-				$("#error-display").text("Le numéro de sécurité entré est incorrect.");
-				window.scroll(0, 0);
-				return;
+				b = false;
 			}
+		}
+		for (let i in y) {
+			let c = tel[i];
+
+			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+				b = false;
+			}
+		}
+		if (b == false) {
+			document.getElementById("expiration-input").value = "";
+			$("#error-display").text("La date d'expiration entrée est incorrecte.");
+			window.scroll(0, 0);
+			return;
 		}
 	} else {
 		document.getElementById("expiration-input").value = "";
@@ -141,7 +151,7 @@ function postAcheteurInfos() {
 	var sql = "insert into Client values (null,'" + mail + "','" + pass + "','" + nom + "','" + pren + "','" + adr1 + "','" + 
 			  adr2 + "','" + vill + "','" + codp + "','" + pays + "','" + tel + "','" + typc + "','" + numc + "','" + nomc + "','" +
 			  expr + "','" + codc + "','" + bg + "'," + acti + ")";
-	
+
 	$.post("PHP-CreationCompteAcheteur-POST.php", {"data" : sql}, function (data) {
 		console.log(data);
 	});
