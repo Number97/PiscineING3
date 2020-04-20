@@ -1,5 +1,5 @@
 function charger() {
-	sql = "select * from Client where Client.mail='pierre.herduin@edu.ece.fr'";
+	sql = "select * from Client where Client.id=" + id;
 
 	$.get("../PHP-GET.php", {"data" : sql}, (data) => {
 		console.log(data);
@@ -32,7 +32,12 @@ function charger() {
 
 			document.getElementById("numeroCarte-input").value = ajust(arr[12]);
 			document.getElementById("nomSurCarte-input").value = ajust(arr[13]);
-			document.getElementById("expiration-input").value = ajust(arr[14]);
+
+			var d = arr[14];
+			var s = d.substring(5, 7) + '/' + d.substring(0, 4);
+
+			document.getElementById("expiration-input").value = s;
+
 			document.getElementById("codeSecu-input").value = ajust(arr[15]);
 			document.getElementById("background-input").value = ajust(arr[16]);
 			background_click(arr[16]);
@@ -56,9 +61,7 @@ function updateAcheteurInfos() {
 
 	var pass = document.getElementById('password-input').value;
 
-	var dp   = document.getElementById('password-input-repeat').value;
-
-	if (pass != dp || pass.length < 6) {
+	if (pass.length < 6) {
 		$("#error-display").text("Veuillez entrer un mot de passe valide.");
 		document.getElementById("password-input").value = "";
 		return;
@@ -126,18 +129,18 @@ function updateAcheteurInfos() {
 	} else {
 		var numbers = "0123456789";
 		for (let i in numc) {
-			let c = tel[i];
+			let c = numc[i];
 
-			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+			if (numbers.indexOf(c) == -1) { // Invalid.
 				$("#error-display").text("Le numéro de carte entré est incorrect.");
 				window.scroll(0, 0);
 				return;
 			}
 		}
 		for (let i in codc) {
-			let c = tel[i];
+			let c = codc[i];
 
-			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+			if (numbers.indexOf(c) == -1) { // Invalid.
 				$("#error-display").text("Le numéro de sécurité entré est incorrect.");
 				window.scroll(0, 0);
 				return;
@@ -170,6 +173,7 @@ function updateAcheteurInfos() {
 			window.scroll(0, 0);
 			return;
 		}
+		expr = y + "-" + m + "-01";
 	} else {
 		document.getElementById("expiration-input").value = "";
 		$("#error-display").text("La date d'expiration entrée est incorrecte.");
@@ -192,13 +196,15 @@ function updateAcheteurInfos() {
 
 	 sql += "typecarte='" + typc + "',numerocarte='" + numc + "',nomsurcarte='" + nomc + "',expiration='" + expr + "',codesecurite='" + codc + "',";
 
-	 if (bg == "null") sql += "background=null,";
-	else sql += "background='" + bg + "' where client.id=1";
+	 if (bg == "null") sql += "background=null";
+	else sql += "background='" + bg + "' ";
+
+	sql += "where client.id=" + id;
 
 	$.post("../PHP-POST.php", {"data" : sql}, function (data) {
 
 		if (data == "New record created") { // Success.
-			window.location.href = "EceBay-MonCompte.html";
+			window.location.href = "EceBay-MonCompte.php";
 		} else { // Mail already used.
 			console.log(data)
 		}

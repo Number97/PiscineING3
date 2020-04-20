@@ -87,9 +87,9 @@ function postAcheteurInfos() {
 	} else {
 		var numbers = "0123456789";
 		for (let i in numc) {
-			let c = tel[i];
+			let c = numc[i];
 
-			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+			if (numbers.indexOf(c) == -1) { // Invalid.
 				document.getElementById("numeroCarte-input").value = "";
 				$("#error-display").text("Le numéro de carte entré est incorrect.");
 				window.scroll(0, 0);
@@ -97,9 +97,9 @@ function postAcheteurInfos() {
 			}
 		}
 		for (let i in codc) {
-			let c = tel[i];
+			let c = codc[i];
 
-			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+			if (numbers.indexOf(c) == -1) { // Invalid.
 				document.getElementById("codeSecu-input").value = "";
 				$("#error-display").text("Le numéro de sécurité entré est incorrect.");
 				window.scroll(0, 0);
@@ -133,6 +133,7 @@ function postAcheteurInfos() {
 			window.scroll(0, 0);
 			return;
 		}
+		expr = y + "-" + m + "-01";
 	} else {
 		document.getElementById("expiration-input").value = "";
 		$("#error-display").text("La date d'expiration entrée est incorrecte.");

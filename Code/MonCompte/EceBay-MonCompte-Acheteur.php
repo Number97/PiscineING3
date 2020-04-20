@@ -8,6 +8,20 @@
 
 -->
 
+<?php
+
+session_start();
+
+if (!empty($_SESSION["type"])) {
+    if ($_SESSION["type"] == "acheteur") {
+        echo '<script type="text/javascript">',
+             'var id = ' . $_SESSION["id"] . ';',
+             '</script>';
+    } else die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head> 
@@ -43,7 +57,7 @@
                         <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     </li>
                     <li class="nav-item">
@@ -57,6 +71,9 @@
             <br><br><br>
             <h1 style="font-size: 80px;" class="text-center">Mon compte Acheteur</h1><br><br><br>
             <h1 class="text-center">Informations Personnelles</h1>
+            <h5 id="error-display" style="color:red"></h5>
+
+            <p style="color:red">Champs obligatoires marqués (*)</p>
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email ECE (*)</label>
@@ -74,10 +91,6 @@
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password (au moins 6 caractères) (*)</label>
                     <input id="password-input" type="password" class="form-control" placeholder="Mot de passe">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password (*)</label>
-                    <input id="password-input-repeat" type="password" class="form-control" id="Comfirmez votre mot de passe" placeholder="Confirmation mot de passe">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse ligne 1 (*)</label>
@@ -145,7 +158,7 @@
             </form>
 
             <h1 class="text-center">Informations de Paiement</h1>
-            <form onsubmit="updateAcheteurInfos();">
+            <form onsubmit="updateAcheteurInfos();return false;">
                 <div class="form-group">
                     <select id="typeCarte-input" class="form-control" id="exampleFormControlSelect1">
                         <option value="1">Choisir le type de carte (*)</option>

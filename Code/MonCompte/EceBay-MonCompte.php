@@ -15,7 +15,11 @@ session_start();
 if (!empty($_SESSION["type"])) {
     if ($_SESSION["type"] == "acheteur") {
         echo '<script type="text/javascript">',
-             'window.location.href = \'../PagesCommunes/EceBay-Accueil.html\';',
+             'window.location.href = \'EceBay-MonCompte-Acheteur.php\';',
+             '</script>';
+    } else if ($_SESSION["type"] == "vendeur") {
+        echo '<script type="text/javascript">',
+             'window.location.href = \'EceBay-MonCompte-Vendeur.php\';',
              '</script>';
     }
 }
@@ -43,7 +47,7 @@ if (!empty($_SESSION["type"])) {
         <link rel="stylesheet" type="text/css" href="EceBay-MonCompte.css">
 
         <!-------------------------Custom JS--------------------------->
-        <script src="JS-ConnexionCompteAcheteur.js" type="text/javascript"></script>
+        <script src="JS-ConnexionCompte.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -100,10 +104,11 @@ if (!empty($_SESSION["type"])) {
                     <div class="collapse multi-collapse" id="multiCollapseExample2">
                         <div class="card card-body">
                             <!-- Login Form -->
-                            <form>
+                            <form action="#" onsubmit="connectVendeur();return false;">
+                                <p id="error-vendeur" style="color:red"></p>
                                 <input type="text" id="login-vendeur" class="fadeIn second" name="login" placeholder="Utilisateur">
                                 <input type="password" id="password-vendeur" class="fadeIn third" name="login" placeholder="Mot de passe">
-                                <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" href="EceBay-MonCompte-Vendeur.html" role="button">Connexion</a>
+                                <input style="font-size: 10px;margin: left;" type="submit" class="btn btn-secondary btn-lg btn-block" value="Connexion">
                             </form>
                         
                             <!-- Remind Passowrd -->
@@ -117,10 +122,11 @@ if (!empty($_SESSION["type"])) {
                     <div class="collapse multi-collapse" id="multiCollapseExample3">
                         <div class="card card-body">
                             <!-- Login Form -->
-                            <form>
+                            <form action="#" onsubmit="connectAdmin();return false;">
+                                <p id="error-admin" style="color:red"></p>
                                 <input type="text" id="login-admin" class="fadeIn second" name="login" placeholder="Utilisateur">
                                 <input type="password" id="password-admin" class="fadeIn third" name="login" placeholder="Mot de passe">
-                                <a style="font-size: 10px;margin: left;" class="btn btn-secondary btn-lg btn-block" href="EceBay-MonCompte-Admin.html" role="button">Connexion</a>
+                                <input style="font-size: 10px;margin: left;" type="submit" class="btn btn-secondary btn-lg btn-block" value="Connexion">
                             </form>
                         
                             <!-- Remind Passowrd -->
