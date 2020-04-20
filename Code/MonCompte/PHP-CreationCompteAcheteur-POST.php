@@ -1,9 +1,6 @@
 <?php
 
-	$host = "localhost";
-	$user = "root";
-	$pass = "";
-	$dBas = "databaseprojectpiscine";
+	include "../config.php";
 
 	// Create connection to the server.
 	$conn = new mysqli($host, $user, $pass, $dBas);

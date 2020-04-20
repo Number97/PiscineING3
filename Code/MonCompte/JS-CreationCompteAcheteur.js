@@ -112,7 +112,19 @@ function postAcheteurInfos() {
 
 	if (expr.length == 7) {
 		var m = expr.substring(0, 2);
-		var y = exprsubstring(3, 7);	
+		var y = exprsubstring(3, 7);
+		var b = false;
+
+		for (let i in codc) {
+			let c = tel[i];
+
+			if (c != '.' && numbers.indexOf(c) == -1) { // Invalid.
+				document.getElementById("codeSecu-input").value = "";
+				$("#error-display").text("Le numéro de sécurité entré est incorrect.");
+				window.scroll(0, 0);
+				return;
+			}
+		}
 	} else {
 		document.getElementById("expiration-input").value = "";
 		$("#error-display").text("La date d'expiration entrée est incorrecte.");
