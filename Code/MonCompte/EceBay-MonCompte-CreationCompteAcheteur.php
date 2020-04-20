@@ -54,79 +54,83 @@
             <br><br><br>
             <h1 style="font-size: 80px;" class="text-center">Création compte Acheteur</h1><br><br><br>
             <h1 class="text-center">Informations Personnelles</h1>
+
+            <h5 id="error-display" style="color:red"></h5>
+
+            <p style="color:red">Champs obligatoires marqués (*)</p>
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Adresse email ECE</label>
+                    <label for="exampleInputEmail1">Adresse email ECE (*)</label>
                     <input id="email-input" type="email" class="form-control" placeholder="Introduire email">
                     <small id="emailHelp" class="form-text text-muted">On ne partagera votre email avec personne.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input id="nom-input" type="email" class="form-control" placeholder="Votre nom">
+                    <label for="exampleInputEmail1">Nom (*)</label>
+                    <input id="nom-input" type="text" class="form-control" placeholder="Votre nom">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom</label>
-                    <input id="prenom-input" type="email" class="form-control" placeholder="Votre prénom">
+                    <label for="exampleInputEmail1">Prénom (*)</label>
+                    <input id="prenom-input" type="text" class="form-control" placeholder="Votre prénom">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label for="exampleInputPassword1">Password (au moins 6 caractères) (*)</label>
                     <input id="password-input" type="password" class="form-control" placeholder="Mot de passe">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label for="exampleInputPassword1">Password (*)</label>
                     <input id="password-input-repeat" type="password" class="form-control" id="Comfirmez votre mot de passe" placeholder="Confirmation mot de passe">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Adresse ligne 1</label>
-                    <input id="adresse1-input" type="email" class="form-control" placeholder="Introduire adresse ligne 1">
+                    <label for="exampleInputEmail1">Adresse ligne 1 (*)</label>
+                    <input id="adresse1-input" type="text" class="form-control" placeholder="Introduire adresse ligne 1">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse ligne 2</label>
-                    <input id="adresse2-input" type="email" class="form-control" placeholder="Introduire adresse ligne 2">
+                    <input id="adresse2-input" type="text" class="form-control" placeholder="Introduire adresse ligne 2">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Ville</label>
-                    <input id="ville-input" type="email" class="form-control" placeholder="Introduire ville">
+                    <label for="exampleInputEmail1">Ville (*)</label>
+                    <input id="ville-input" type="text" class="form-control" placeholder="Introduire ville">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Code postal</label>
-                    <input id="codePostal-input" type="email" class="form-control" placeholder="Introduire code postal">
+                    <label for="exampleInputEmail1">Code postal (*)</label>
+                    <input id="codePostal-input" type="text" class="form-control" placeholder="Introduire code postal">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Pays</label>
-                    <input id="pays-input" type="email" class="form-control" placeholder="Introduire pays">
+                    <label for="exampleInputEmail1">Pays (*)</label>
+                    <input id="pays-input" type="text" class="form-control" placeholder="Introduire pays">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Numéro de téléphone</label>
-                    <input id="telephone-input" type="email" class="form-control" placeholder="Votre numéro">
+                    <input id="telephone-input" type="text" class="form-control" placeholder="Votre numéro">
                 </div>
-                <button type="submit" class="btn btn-warning">Choisir image de fond </button>
+                <button type="submit" class="btn btn-warning">Choisir image de fond</button>
             </form>
 
             <h1 class="text-center">Informations de Paiement</h1>
             <form action="#" onsubmit="postAcheteurInfos();return false;">
                 <div class="form-group">
                     <select id="typeCarte-input" class="form-control" id="exampleFormControlSelect1">
-                        <option value="1">Choisir le type de carte</option>
+                        <option value="1">Choisir le type de carte (*)</option>
                         <option value="2">Visa</option>
                         <option value="3">Mastercard</option>
                         <option value="4">American Express</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Numéro de carte</label>
+                    <label for="exampleInputEmail1">Numéro de carte (*)</label>
                     <input id="numeroCarte-input" type="text" class="form-control" placeholder="Votre numéro">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nom tel que sur la carte</label>
+                    <label for="exampleInputEmail1">Nom tel que sur la carte (*)</label>
                     <input id="nomSurCarte-input" type="text" class="form-control" placeholder="Introduire nom tel que sur la carte">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Date d'expiration</label>
+                    <label for="exampleInputEmail1">Date d'expiration (*)</label>
                     <input id="expiration-input" type="text" class="form-control" placeholder="mm/aaaa">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Code de sécurité</label>
+                    <label for="exampleInputEmail1">Code de sécurité (*)</label>
                     <input id="codeSecu-input" type="text" class="form-control" placeholder="CVV/CVC">
                 </div>
                 <button style="font-size: 30px;" type="submit" class="btn btn-primary">Création du compte</button>
