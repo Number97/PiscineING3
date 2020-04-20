@@ -6,7 +6,7 @@ function connectAcheteur() {
 		$("#error-acheteur").text("Remplissez les champs pour vous connecter.");
 	}
 
-	var sql = "select motdepasse, background from Client where Client.mail='" + user + "';";
+	var sql = "select motdepasse, background, id from Client where Client.mail='" + user + "';";
 
 	$.get("../PHP-GET.php", {"data" : sql}, (data) => {
 		console.log(data);
@@ -14,8 +14,10 @@ function connectAcheteur() {
 		var rows = data.split('\n');
 
 		if (rows[0] == pass) { // Connection.
-			$.post("PHP-setSession.php", {"email":user, "type":"acheteur", "back":rows[1]}, (dt) => {
+			$.post("PHP-setSession.php", {"email":user, "type":"acheteur", "back":rows[1], "id":rows[2]}, (dt) => {
 				console.log(dt);
+
+				window.location.href = "EceBay-MonCompte.php";
 			});
 		} else { // Invalid.
 			$("#error-acheteur").text("Identifiant et/ou mot de passe incorrect !");

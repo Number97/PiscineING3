@@ -9,7 +9,17 @@
 -->
 
 <?php
+
 session_start();
+
+if (!empty($_SESSION["type"])) {
+    if ($_SESSION["type"] == "acheteur") {
+        echo '<script type="text/javascript">',
+             'window.location.href = \'../PagesCommunes/EceBay-Accueil.html\';',
+             '</script>';
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +60,7 @@ session_start();
                         <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     </li>
                 </ul>

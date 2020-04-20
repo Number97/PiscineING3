@@ -1,5 +1,5 @@
 function test() {
-	sql = "select * from Client where Client.mail='pierre.herduin@edu.ece.fr'";
+	var sql = "select * from Client where Client.mail='pierre.herduin@edu.ece.fr'";
 
 	$.get("../PHP-GET.php", {"data" : sql}, (data) => {
 		console.log(data);
