@@ -13,7 +13,7 @@
 session_start();
 
 if (!empty($_SESSION["type"])) {
-    if ($_SESSION["type"] == "vendeur") {
+    if ($_SESSION["type"] == "admin") {
         echo '<script type="text/javascript">',
              'var id = ' . $_SESSION["id"] . ';',
              '</script>';
@@ -69,77 +69,21 @@ if (!empty($_SESSION["type"])) {
 
         <div class="container">
             <br><br><br>
-            <h1 style="font-size: 80px;" class="text-center">Mon compte Vendeur</h1><br><br><br>
+            <h1 style="font-size: 80px;" class="text-center">Mon compte Administrateur</h1><br><br><br>
             <h1 class="text-center">Informations Personnelles</h1>
-            <form>
+            <form onsubmit="updateAdminInfos();return false;">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email ECE (*)</label>
                     <input id="email-input" type="email" class="form-control" placeholder="Introduire email">
                     <small id="emailHelp" class="form-text text-muted">On ne partagera votre email avec personne.</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nom (*)</label>
-                    <input id="nom-input" type="text" class="form-control" placeholder="Votre nom">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom (*)</label>
-                    <input id="prenom-input" type="text" class="form-control" placeholder="Votre prénom">
+                    <label for="exampleInputEmail1">Pseudo (*)</label>
+                    <input id="pseudo-input" type="text" class="form-control" placeholder="Votre nom">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password (au moins 6 caractères) (*)</label>
                     <input id="password-input" type="password" class="form-control" placeholder="Mot de passe">
-                </div>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseBackgroundChoice" aria-expanded="false" aria-controls="collapseExample">
-                    Choisir fond d'ecran
-                    <small class="form-text"><span id="background-input"></span></small>
-                </button>
-                <br>
-                <div class="collapse" id="collapseBackgroundChoice"><br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Abstract 1.jpeg" height=200px width=300px id="../Backgrounds/Abstract 1.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Abstract 2.jpeg" height=200px width=300px id="../Backgrounds/Abstract 2.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Abstract 3.jpeg" height=200px width=300px id="../Backgrounds/Abstract 3.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Abstract 4.jpeg" height=200px width=300px id="../Backgrounds/Abstract 4.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Abstract 5.jpeg" height=200px width=300px id="../Backgrounds/Abstract 5.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Colors.jpeg" height=200px width=300px id="../Backgrounds/Colors.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Green Clouds.jpeg" height=200px width=300px id="../Backgrounds/Green Clouds.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Pink Clouds.jpeg" height=200px width=300px id="../Backgrounds/Pink Clouds.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="../Backgrounds/Sunset.jpeg" height=200px width=300px id="../Backgrounds/Sunset.jpeg" onclick="background_click(this.id)"/>
-                        </div>
-                    </div>
-                </div><br>
-            </form>
-
-            <h1 class="text-center">Informations de Paiement</h1>
-            <form onsubmit="updateAdminInfos();return false;">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">BIC (*)</label>
-                    <input id="bic-input" type="text" class="form-control" placeholder="Introduire nom tel que sur la carte">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">IBAN (*)</label>
-                    <input id="iban-input" type="text" class="form-control" placeholder="Introduire nom tel que sur la carte">
                 </div>
                 <button style="font-size: 10px;" type="submit" class="btn btn-secondary">Sauvegarder les modifications</button>
             </form>

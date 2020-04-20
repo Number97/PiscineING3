@@ -21,6 +21,10 @@ if (!empty($_SESSION["type"])) {
         echo '<script type="text/javascript">',
              'window.location.href = \'EceBay-MonCompte-Vendeur.php\';',
              '</script>';
+    } else if ($_SESSION["type"] == "admin") {
+        echo '<script type="text/javascript">',
+             'window.location.href = \'EceBay-MonCompte-Admin.php\';',
+             '</script>';
     }
 }
 
