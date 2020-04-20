@@ -18,7 +18,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!---------------------JQuery - JavaScript--------------------->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
@@ -27,6 +27,9 @@
 
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-Admin-AjouterAdmin.css">
+
+        <!-------------------------Custom JS--------------------------->
+        <script type="text/javascript" src="JS-Admin-AjouterAdmin.js"></script>
 
     </head>
     <body>
@@ -53,28 +56,29 @@
             <br><br><br>
             <h1 style="font-size: 80px;" class="text-center">Création compte Admin</h1><br><br><br>
             <h1 class="text-center">Informations Personnelles</h1>
+            <h5 id="error-display" style="color:red;"></h5>
+
             <form>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Adresse email ECE</label>
-                    <input type="email" class="form-control" placeholder="Introduire email">
-                    <small id="emailHelp" class="form-text text-muted">On enverra un mail au vendeur poiur qu'il finisse de creer son compte.</small>
+                    <input id="mail-input" type="email" class="form-control" placeholder="Introduire email">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input type="email" class="form-control" placeholder="Nom">
+                    <label for="exampleInputEmail1">Password (6 caracères minimum) </label>
+                    <input id="password-input" type="Password" class="form-control" placeholder="Entrez votre mot de passe">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom</label>
-                    <input type="email" class="form-control" placeholder="Prénom">
+                    <label for="exampleInputEmail1">Password</label>
+                    <input id="password-input-repeat" type="password" class="form-control" placeholder="Confirmez le mot de passe">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Pseudo</label>
-                    <input type="email" class="form-control" placeholder="Pseudo">
+                    <label for="exampleInputEmail1">Pseudo (3 caracères minimum)</label>
+                    <input id="pseudo-input" type="text" class="form-control" placeholder="Pseudo">
                 </div>
             </form>
 
             <form>
-                <button style="font-size: 30px;" type="submit" class="btn btn-primary">Création du compte</button>
+                <button style="font-size: 30px;" type="button" onclick="postAdmin();" class="btn btn-primary">Création du compte</button>
             </form>
             <br><br><br>
         </div>

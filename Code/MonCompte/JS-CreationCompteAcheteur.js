@@ -164,20 +164,17 @@ function postAcheteurInfos() {
 
 	 sql += acti + ")";
 
-	 var res;
-console.log(sql);
 	$.post("../PHP-POST.php", {"data" : sql}, function (data) {
-		res = data;
-		console.log(data);
+		if (data == "New record created") { // Success.
+			window.location.href = "EceBay-MonCompte.php";
+		} else { // Mail already used.
+			$("#error-display").text("Cette adresse mail est déjà utilisée.");
+			document.getElementById("email-input").value = "";
+			window.scroll(0, 0);
+		}
 	});
 
-	if (res == "New record created") { // Success.
-		window.location.href = "EceBay-MonCompte.html";
-	} else { // Mail already used.
-		$("#error-display").text("Cette adresse mail est déjà utilisée.");
-		document.getElementById("email-input").value = "";
-		window.scroll(0, 0);
-	}
+	
 }
 
 function background_click(clicked_id) {

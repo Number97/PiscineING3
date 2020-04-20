@@ -8,6 +8,20 @@
 
 -->
 
+<?php
+
+session_start();
+
+if (!empty($_SESSION["type"])) {
+    if ($_SESSION["type"] == "admin") {
+        echo '<script type="text/javascript">',
+             'var id = ' . $_SESSION["id"] . ';',
+             '</script>';
+    } else die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head> 
@@ -26,10 +40,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Admin-AjouterVendeur.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-Admin-Vendeurs.css">
 
         <!-------------------------Custom JS--------------------------->
-        <script type="text/javascript" src="JS-Admin-AjouterVendeur.js"></script>
+        <script type="text/javascript" src="JS-Admin-Vendeurs.js"></script>
 
     </head>
     <body>
@@ -53,41 +67,31 @@
         </nav>
 
         <div class="container">
-            <br><br><br>
-            <h1 style="font-size: 80px;" class="text-center">Création compte Vendeur</h1><br><br><br>
-            <h1 class="text-center">Informations Personnelles</h1>
-            <h5 id="error-display" style="color:red;"></h5>
-            
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Adresse email ECE</label>
-                    <input id="email-input" type="email" class="form-control" placeholder="Introduire email">
-                    <small id="emailHelp" class="form-text text-muted">On enverra un mail au vendeur poiur qu'il finisse de creer son compte.</small>
+            <br><br>
+            <h1 class="text-center">Tous les vendeurs</h1>
+            <div class="form-row" style="margin: 15px;">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                </form>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <a style="font-size: 50px;margin: auto;" class="btn btn-info" href="EceBay-Admin-AjouterVendeur.html" role="button">Ajouter un vendeur</a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input id="nom-input" type="text" class="form-control" placeholder="Nom">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom</label>
-                    <input id="prenom-input" type="text" class="form-control" placeholder="Prénom">
-                </div>
-            </form>
+            </div>
+            <br>
 
-            <h1 class="text-center">Informations bancaires pour recevoir les paiements</h1>
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">IBAN</label>
-                    <input id="iban-input" type="text" class="form-control" placeholder="Code IBAN">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">BIC/SWIFT</label>
-                    <input id="bic-input" type="textx" class="form-control" placeholder="Code BIC/SWIFT">
-                </div>
-                <button style="font-size: 30px;" type="button" onclick="postVendeur();return false;" class="btn btn-primary">Création du compte</button>
-            </form>
-            <br><br><br>
+            <div id="div-vendeurs">
+
+            </div>
+
+            <br><br><br><br>
         </div>
+        <script type="text/javascript">charge();</script>
     </body>
 </html>
 

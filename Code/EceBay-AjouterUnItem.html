@@ -28,6 +28,9 @@
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-AjouterUnItem.css">
 
+        <!-------------------------Custom JS--------------------------->
+        <script type="text/javascript" src="JS-AjouterItem.js"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
@@ -40,7 +43,7 @@
                         <a class="nav-link" href="PagesCommunes/EceBay-Navigation.html">Navigation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="MonCompte/EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Vendeur/EceBay-Vendre.html">Vendre
@@ -128,7 +131,7 @@
                 <div class="col-10">
                 </div>
             </div><br>
-            <button style="font-size: 30px; width: 1000px;" type="submit" class="btn btn-info">Ajouter l'article</button>
+            <button style="font-size: 30px; width: 1000px;" type="button" onclick="postItem();return false;" class="btn btn-info">Ajouter l'article</button>
 
             <br><br><br>
         </div>
