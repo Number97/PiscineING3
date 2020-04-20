@@ -167,9 +167,11 @@ function postAcheteurInfos() {
 	});
 
 	if (res == "New record created") { // Success.
-		
-	} else {
-		
+		window.location.href = "EceBay-MonCompte.html";
+	} else { // Mail already used.
+		$("#error-display").text("Cette adresse mail est déjà utilisée.");
+		document.getElementById("email-input").value = "";
+		window.scroll(0, 0);
 	}
 }
 
