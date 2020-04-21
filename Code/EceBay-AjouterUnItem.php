@@ -37,22 +37,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="PagesCommunes/EceBay-Accueil.html">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="PagesCommunes/EceBay-Accueil.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="PagesCommunes/EceBay-Navigation.html">Navigation</a>
+                        <a class="nav-link" href="PagesCommunes/EceBay-Navigation.php">Navigation</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Vendeur/EceBay-Vendre.html">Vendre
+                        <a class="nav-link" href="Vendeur/EceBay-Vendre.php">Vendre
                             <br>
                             <p class="navdescription">(si connecté en tant que Vendeur)</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Admin/EceBay-Admin.html">Admin
+                        <a class="nav-link" href="Admin/EceBay-Admin.php">Admin
                             <br>
                             <p class="navdescription">(si connecté en tant qu'Admin)</p>
                         </a>

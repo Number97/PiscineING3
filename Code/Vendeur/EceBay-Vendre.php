@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Panier.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-Vendre.css">
 
     </head>
     <body>
@@ -34,16 +34,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.html">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
+                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.php">Navigation</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../MonCompte/EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="../MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="EceBay-Panier.html">Panier<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="EceBay-Vendre.php">Vendre<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@
         
         <div class="container">
             <br><br>
-            <h1 class="text-center">Votre Panier</h1>
+            <h1 class="text-center">Vos articles</h1>
             <div class="form-row" style="margin: 15px;">
                 <form class="form-inline">
                     <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
@@ -81,65 +81,37 @@
                 </div>
             </div>
             <div>
-                <form style="margin: 10px;">
-                    <button class="btn btn-primary">Filtrer</button>
-                </form>
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <a style="font-size: 50px;margin: auto;" class="btn btn-info" href="../EceBay-AjouterUnItem.php" role="button">Ajouter un Article</a>
+                    </div>
+                </div>
             </div>
-            
+            <br>
             <div class="row">
                 <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
                         <div class="row no-gutters">
                             <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article1.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
+                                <img src="../Articles/Article1.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
                             </div>
                             <div class="col-md-2">
                                 <div class="card-body">
                                     <h6 class="card-title">Article 1</h6>
+                                    <p class="card-text" style="font-size: 10px;">Se termine dans 72h</p>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body" style="background-color: #0275d8;height: 58px;">
+                                <div class="card-body" style="background-color: #0275d8;height: 68px;">
                                     <h6 class="card-title" style="color: white;">Enchères</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">267 € par Jean Segado</p>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">250 €</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="col-md-2">
-                    <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article4.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">Article 4</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body" style="background-color: #5cb85c;height: 58px;">
+                                <div class="card-body" style="background-color: #5cb85c;height: 68px;">
                                     <h6 class="card-title" style="color: white;">Achat Immédiat</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">63 200 €</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">1 000 €</p>
                                 </div>
                             </div>
                         </div>
@@ -147,101 +119,36 @@
                 </div>
                 
                 
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
                         <div class="row no-gutters">
                             <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article13.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">Article 13</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body" style="background-color: #d9534f;height: 58px;">
-                                    <h6 class="card-title" style="color: white;">Meilleure Offre</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">100 €</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="col-md-2">
-                    <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article5.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">Article 5</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body" style="background-color: #5cb85c;height: 58px;">
-                                    <h6 class="card-title" style="color: white;">Achat Immédiat</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">40 104 €</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <div class="col-md-2">
-                    <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
-                        <div class="row no-gutters">
-                            <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article14.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
+                                <img src="../Articles/Article14.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
                             </div>
                             <div class="col-md-2">
                                 <div class="card-body">
                                     <h6 class="card-title">Article 14</h6>
+                                    <p class="card-text" style="font-size: 10px;">Se termine dans 5 jours</p>
                                 </div>
                             </div>
+                            <div class="col-md-2"></div>
                             <div class="col-md-2">
-                                <div class="card-body" style="background-color: #5cb85c;height: 58px;">
+                                <div class="card-body" style="background-color: #5cb85c;height: 68px;">
                                     <h6 class="card-title" style="color: white;">Achat Immédiat</h6>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">321 098 €</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">43 750 €</p>
                                 </div>
                             </div>
                         </div>
@@ -249,33 +156,41 @@
                 </div>
                 
                 
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
                         <div class="row no-gutters">
                             <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article9.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
+                                <img src="../Articles/Article5.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
                             </div>
                             <div class="col-md-2">
                                 <div class="card-body">
-                                    <h6 class="card-title">Article 9</h6>
+                                    <h6 class="card-title">Article 5</h6>
+                                    <p class="card-text" style="font-size: 10px;">Se termine dans 72h</p>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body" style="background-color: #0275d8;height: 58px;">
-                                    <h6 class="card-title" style="color: white;">Enchères</h6>
+                                <div class="card-body" style="background-color: #d9534f;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Meilleure Offre</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">700 € par Jean Segado</p>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">54 €</h6>
+                                <div class="card-body" style="background-color: #5cb85c;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Achat Immédiat</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">2 500 €</p>
                                 </div>
                             </div>
                         </div>
@@ -283,19 +198,129 @@
                 </div>
                 
                 
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
                     </form>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-md-10">
-                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 60px;">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
                         <div class="row no-gutters">
                             <div class="col-md-6"  style="font-size: 20px;" >
-                                <img src="../Articles/Article7.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 58px;">
+                                <img src="../Articles/Article14.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Article 14</h6>
+                                    <p class="card-text" style="font-size: 10px;">Se termine dans 5 jours</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body" style="background-color: #d9534f;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Meilleure Offre</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">350 € par Jean Segado</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-warning">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-md-1">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-dark">Supprimer</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-6"  style="font-size: 20px;" >
+                                <img src="../Articles/Article2.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Article 2</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body" style="background-color: #5bc0de;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Vendu</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">29.01.2008</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body" style="background-color: #d9534f;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">413 €</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">Meilleure Offre</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-secondary">Plus d'informations</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-6"  style="font-size: 20px;" >
+                                <img src="../Articles/Article15.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body">
+                                    <h6 class="card-title">Article 15</h6>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body" style="background-color: #5bc0de;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Vendu</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">07.12.2015</p>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="card-body" style="background-color: #0275d8;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">321 499 €</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">Enchères</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <form style="margin: 10px;">
+                        <button class="btn btn-secondary">Plus d'informations</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card mb-3" style="max-width: 1400px;margin: auto;height: 70px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-6"  style="font-size: 20px;" >
+                                <img src="../Articles/Article7.jpeg" style="object-fit: cover;  min-width: 100%; max-height: 68px;">
                             </div>
                             <div class="col-md-2">
                                 <div class="card-body">
@@ -303,36 +328,29 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body" style="background-color: #0275d8;height: 58px;">
-                                    <h6 class="card-title" style="color: white;">Enchères</h6>
+                                <div class="card-body" style="background-color: #5bc0de;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">Vendu</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">16.09.2012</p>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="card-body">
-                                    <h6 class="card-title">731 €</h6>
+                                <div class="card-body" style="background-color: #5cb85c;height: 68px;">
+                                    <h6 class="card-title" style="color: white;">1 000 €</h6>
+                                    <p class="card-text" style="color: white; font-size: 10px;">Achat Immédiat</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
                 <div class="col-md-2">
                     <form style="margin: 10px;">
-                        <button class="btn btn-secondary">Supprimer</button>
+                        <button class="btn btn-secondary">Plus d'informations</button>
                     </form>
                 </div>
             </div>
-            <br><br>
-
-            <div class="row">
-                <div class="col-md-8">
-                    <button style="font-size: 30px;" type="submit" class="btn btn-dark">Vider le panier</button>
-                </div>
-                <div class="col-md-4">
-                    <button style="font-size: 30px;" type="submit" class="btn btn-info">Passer la commande</button>
-                </div>
-            </div><br><br>
+            
+            
+            <br><br><br><br>
         </div>
     </body>
 </html>

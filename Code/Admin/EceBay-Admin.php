@@ -26,10 +26,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Admin-AjouterVendeur.css">
-
-        <!-------------------------Custom JS--------------------------->
-        <script type="text/javascript" src="JS-Admin-AjouterVendeur.js"></script>
+        <link rel="stylesheet" type="text/css" href="EceBay-Admin.css">
 
     </head>
     <body>
@@ -37,16 +34,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.html">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
+                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.php">Navigation</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="EceBay-Admin.html">Admin<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="EceBay-Admin.php">Admin<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -54,39 +51,19 @@
 
         <div class="container">
             <br><br><br>
-            <h1 style="font-size: 80px;" class="text-center">Création compte Vendeur</h1><br><br><br>
-            <h1 class="text-center">Informations Personnelles</h1>
-            <h5 id="error-display" style="color:red;"></h5>
-            
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Adresse email ECE</label>
-                    <input id="email-input" type="email" class="form-control" placeholder="Introduire email">
-                    <small id="emailHelp" class="form-text text-muted">On enverra un mail au vendeur poiur qu'il finisse de creer son compte.</small>
+            <h1 style="font-size: 80px;" class="text-center">Admin</h1><br><br><br>
+				
+            <div class="row" style="align-items: center;">
+                <div class="col">
+                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Items.php" role="button">Articles</a>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input id="nom-input" type="text" class="form-control" placeholder="Nom">
+                <div class="col">
+                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Vendeurs.php" role="button">Vendeurs</a>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Prénom</label>
-                    <input id="prenom-input" type="text" class="form-control" placeholder="Prénom">
+                <div class="col">
+                    <a style="font-size: 50px;margin: auto;" class="btn btn-secondary" href="EceBay-Admin-Admins.php" role="button">Admins</a>
                 </div>
-            </form>
-
-            <h1 class="text-center">Informations bancaires pour recevoir les paiements</h1>
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">IBAN</label>
-                    <input id="iban-input" type="text" class="form-control" placeholder="Code IBAN">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">BIC/SWIFT</label>
-                    <input id="bic-input" type="textx" class="form-control" placeholder="Code BIC/SWIFT">
-                </div>
-                <button style="font-size: 30px;" type="button" onclick="postVendeur();return false;" class="btn btn-primary">Création du compte</button>
-            </form>
-            <br><br><br>
+            </div>
         </div>
     </body>
 </html>

@@ -37,13 +37,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.html">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="../PagesCommunes/EceBay-Accueil.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.html">Navigation</a>
+                        <a class="nav-link" href="../PagesCommunes/EceBay-Navigation.php">Navigation</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="EceBay-MonCompte.html">Votre compte</a>
+                        <a class="nav-link" href="EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     </li>
                 </ul>
