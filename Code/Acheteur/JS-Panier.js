@@ -430,6 +430,34 @@ function supprimer(index)
 	$.post('../PHP-POST.php', {'data' : sql}, (data) => {location.reload();})
 }
 
-function passerCommande(){
+function passerCommande() {
+	var sql = "select * from panier where panier.client=" + session_id;
 
+	$.get("../PHP-GET.php", {'data': sql}, (data) => {
+		var rows = data.split('\n');
+		console.log(data);
+
+		while (rows.length > 1) {
+
+			var type = rows[3];
+
+			if (type == "Achat Immediat") {
+
+				var sql = "insert into commande values (null, " + session_id + ", " + rows[2] + ")";
+				$.post("../PHP-POST.php", {'data': sql});
+
+			} else if (type == "Enchere") {
+
+				var sql = "insert into enchere values (null, " + rows[2] + ", " + session_id + ", (select CURRENT_TIMESTAMP), " + rows[4] + ")";
+				$.post("../PHP-POST.php", {'data': sql});
+
+			} else if (type == "Meilleure Offre") {
+
+				var sql = "insert into negociation values (null, 1, 1, " + session_id + ", null, " + rows[4] + ", 0, " + rows[2] + ")";
+				$.post("../PHP-POST.php", {'data': sql});
+			}
+
+			rows.splice(0, 6);
+		}
+	});
 }
