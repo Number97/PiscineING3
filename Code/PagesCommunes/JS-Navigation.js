@@ -32,6 +32,12 @@ function loadItems(filtrer) {
 			document.getElementById("navpanier").style.display = "none";
 		}
 	}
+	else
+	{
+		document.getElementById("navvendre").style.display = "none";
+		document.getElementById("navadmin").style.display = "none";
+		document.getElementById("navpanier").style.display = "none";
+	}
 
 	sql="select count(id) from item"
 
