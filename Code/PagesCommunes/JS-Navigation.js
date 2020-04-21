@@ -623,7 +623,7 @@ function panierDirect(ind, prix, el) {
 	el.disabled = true;
 	document.getElementById("buttond" + ind).disabled = true;
 
-	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'direct', " + prix + ");";
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'Achat Immediat', " + prix + ");";
 	$.post('../PHP-POST.php', {'data': sql});
 }
 
@@ -631,7 +631,7 @@ function panierEnchere(ind, prix, el) {
 	el.disabled = true;
 	document.getElementById("buttone" + ind).disabled = true;
 	
-	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'enchere', " + prix + ");";
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'Enchere', " + prix + ");";
 	$.post('../PHP-POST.php', {'data': sql});
 }
 
@@ -639,6 +639,6 @@ function panierOffre(ind, prix, el) {
 	el.disabled = true;
 	document.getElementById("buttonn" + ind).disabled = true;
 
-	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'offre', " + prix + ");";
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'Meilleure Offre', " + prix + ");";
 	$.post('../PHP-POST.php', {'data': sql});
 }
