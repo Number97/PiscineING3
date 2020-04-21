@@ -69,12 +69,6 @@ if (!empty($_SESSION["type"])) {
         <div class="container">
             <br><br>
             <h1 class="text-center">Tous les vendeurs</h1>
-            <div class="form-row" style="margin: 15px;">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
-                </form>
-            </div>
             <div>
                 <div class="row">
                     <div class="col-md-8"></div>

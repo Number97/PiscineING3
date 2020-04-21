@@ -1,16 +1,6 @@
 function loadItemsEnVente(filtrer) {
 	var i = 0;
 
-	//load background image if connected
-
-	document.body.style.backgroundImage = "url('"+session_background+"')";
-	document.body.style.backgroundRepeat = "no-repeat";
-	document.body.style.objectFit = "fill";
-	document.body.style.backgroundSize = "100% 100%";
-	document.body.style.backgroundAttachment = "fixed";
-	document.getElementById("navpanier").style.display = "none";
-	document.getElementById("navadmin").style.display = "none";
-
 	sql="select count(id) from item where item.vendu=0";
 
 	var nombreArticles = 0;
