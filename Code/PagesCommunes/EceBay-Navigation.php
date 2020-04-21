@@ -42,7 +42,7 @@ if (!empty($_SESSION["type"])) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-VoirItem.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-Navigation.css">
 
         <!-------------------------Custom JS--------------------------->
         <script src="JS-Navigation.js" type="text/javascript"></script>
@@ -94,71 +94,35 @@ if (!empty($_SESSION["type"])) {
             <div>
                 <div>
                     <label class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Feraille ou Trésor
+                        <input type="checkbox" id="feraillecheck" checked> Feraille ou Trésor
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Bon pour le Musée
+                        <input type="checkbox" id="boncheck" checked> Bon pour le Musée
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Accessoire VIP
+                        <input type="checkbox" id="vipcheck" checked> Accessoire VIP
                     </label>
                     <label style="margin-left: 100px;" class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Enchères
+                        <input type="checkbox" id="encherecheck" checked> Enchères
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Meilleure Offre
+                        <input type="checkbox" id="directcheck" checked> Meilleure Offre
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" autocomplete="off"> Achat immédiat
+                        <input type="checkbox" id="achatcheck" checked> Achat immédiat
                     </label>
                 </div>
             </div>
             <div>
                 <form style="margin: 10px;">
-                    <button class="btn btn-primary">Filtrer</button>
+                    <button type="button" onclick="filtrer()" class="btn btn-primary">Filtrer</button>
                 </form>
             </div>
-        </div>
-
-
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal">
-        Launch demo modal
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="container">
-                            <h1 class="text-center"><span id="nom-input"></span></h1><br>
-                            <h5 class="text-center"><span id="categorie-input"></span></h5>
-                            <div class="card">
-                                <img id="image-input" class="card-img-top">
-                                <div class="card-body">
-                                    <p class="card-text"><span id="description-input"></span><br><br>Vendu par : <span id="prenom-vendeur-input"></span> <span id="nom-vendeur-input"></span></p>
-                                    <p class="card-text">Expire le <span id="date-expiration-input"></span></p>
-                                    
-                                    <button type="button" id="bouton-direct" class="btn btn-success" style="margin: 5px;"><span id="direct-input"></span><br><span id="prix-direct-input"></span></button>
-                                    <button type="button" id="bouton-enchere" class="btn btn-primary" style="margin: 5px;"><span id="enchere-input"></span><br><span id="prix-enchere-input"></span></button>
-                                    <button type="button" id="bouton-negociation" class="btn btn-danger" style="margin: 5px;"><span id="negociation-input"></span><br><br></button>
-                                    <button type="button" id="bouton-modifier" class="btn btn-secondary" style="margin: 5px;"><span id="modifier-input"></span><br></button>
-                                    <button type="button" id="bouton-supprimer" class="btn btn-warning" style="margin: 5px;"><span id="supprimer-input"></span><br></button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </body>
     <script>
-        creationDivs();
+        loadItems();
     </script>
 </html>
 
