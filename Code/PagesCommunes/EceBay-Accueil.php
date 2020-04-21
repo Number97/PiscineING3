@@ -8,6 +8,23 @@
 
 -->
 
+<?php
+session_start();
+if (!empty($_SESSION["type"])) {
+    echo '<script type="text/javascript">',
+         'var session_id = ' . $_SESSION["id"] . ';',
+         'var session_type =\'' . $_SESSION["type"] . '\';',
+         'var session_background =\'' . $_SESSION["back"] . '\';',
+         'var session_email =\'' . $_SESSION["email"] . '\';',
+         'var nobody = false;',
+         '</script>';
+} else { 
+    echo '<script type="text/javascript">',
+         'var nobody = true;',
+         '</script>';
+}
+?>
+
 <!DOCTYPE html>
 <html>
 	<head> 
@@ -27,6 +44,9 @@
         <!-------------------------Custom CSS-------------------------->
         <link rel="stylesheet" type="text/css" href="EceBay-Accueil.css">
 
+        <!-------------------------Custom JS--------------------------->
+        <script src="JS-Accueil.js" type="text/javascript"></script>
+
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">          
@@ -42,29 +62,23 @@
                         <a class="nav-link" href="../MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Acheteur/EceBay-Panier.php">Panier
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Acheteur)</p>
-                        </a>
+                        <a id="navpanier" class="nav-link" href="../Acheteur/EceBay-Panier.php">Panier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre
-                            <br>
-                            <p class="navdescription">(si connecté en tant que Vendeur)</p>
-                        </a>
+                        <a id="navvendre" class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Admin/EceBay-Admin.php">Admin
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Admin)</p>
-                        </a>
+                        <a id="navadmin" class="nav-link" href="../Admin/EceBay-Admin.php">Admin</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <br><br><br><br><br><br><br>
-        <h1 class="text-center" style="font-size: 200px;">Bienvenue!</h1>
+        <h1 class="text-center" style="font-size: 200px; background-colo: lightgrey">Bienvenue!</h1>
     </body>
+    <script>
+        loadItems();
+    </script>
 </html>
 
 
