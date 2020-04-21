@@ -74,7 +74,7 @@ if (!empty($_SESSION["type"])) {
             </div>
         </nav>
         <br><br><br><br><br><br><br>
-        <h1 class="text-center" style="font-size: 200px; background-colo: lightgrey">Bienvenue!</h1>
+        <h1 class="text-center" style="font-size: 200px; background-color: lightgrey">Bienvenue!</h1>
     </body>
     <script>
         loadItems();
