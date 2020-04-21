@@ -105,9 +105,6 @@ if (!empty($_SESSION["type"])) {
                 </form>
             </div>
             <div id="main-container">
-                
-            </div>
-            
         </div>
     </body>
     <script>

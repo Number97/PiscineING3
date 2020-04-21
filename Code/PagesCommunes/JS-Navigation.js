@@ -41,6 +41,7 @@ function loadItems(filtrer) {
 	var nombreArticlesLeft = 0;
 	var div;
 
+	var ids = [];
 	var noms = [];
 	var descriptions = [];
 	var vendeurs = [];
@@ -79,6 +80,7 @@ function loadItems(filtrer) {
 
 					for(var indexCounter=0; indexCounter<nombreArticles;indexCounter++)
 					{
+						ids[indexCounter] = ajust(arr[0+18*indexCounter]);
 						noms[indexCounter] = ajust(arr[1+18*indexCounter]);
 						descriptions[indexCounter] = ajust(arr[2+18*indexCounter]);
 						vendeurIDs[indexCounter] = ajust(arr[3+18*indexCounter]);
@@ -129,7 +131,7 @@ function loadItems(filtrer) {
 								}
 								else
 								{
-									generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex);
+									generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex,ids);
 								}
 							}
 						});
@@ -140,8 +142,8 @@ function loadItems(filtrer) {
 	});
 }
 
-function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex) {
-	for(var j=0;j<nombreRows;j++) //creating rows
+function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex,ids) {
+	for(var j=0;j<=nombreRows;j++) //creating rows
 	{
 		div = document.createElement("div");
 		div.setAttribute("class","row");
@@ -324,12 +326,73 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					
 					div = document.createElement("button");
 					div.setAttribute("type","button");
-					div.setAttribute("onclick","supprimer(" + liveIndex + ")");
 					div.setAttribute("class","btn btn-warning");
 					div.setAttribute("id","buttonsmodal" + liveIndex);
+
+					div.setAttribute("data-toggle","modal");
+					div.setAttribute("data-target","#modalsuppinfoitem" + liveIndex);
+
 					document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 					document.getElementById("buttonsmodal" + liveIndex).innerHTML = "Supprimer<br><br>";
+				
+					////////modal verification supprimer interieur modal
+					div = document.createElement("div");
+					div.setAttribute("class","modal fade");
+					div.setAttribute("id","modalsuppinfoitem" + liveIndex);
+					div.setAttribute("role","dialog");
+					div.setAttribute("aria-labelledby","exampleModalLabel");
+					div.setAttribute("aria-hidden","true");
+					document.getElementById("modalcard-body"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-dialog modal-lg");
+					div.setAttribute("role","document");
+					div.setAttribute("id","modalsuppinfoitemdialog" + liveIndex);
+					document.getElementById("modalsuppinfoitem"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-content");
+					div.setAttribute("id","modalsuppinfoitemcontent" + liveIndex);
+					document.getElementById("modalsuppinfoitemdialog"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-body");
+					div.setAttribute("id","modalsuppinfoitemcontentbody" + liveIndex);
+					document.getElementById("modalsuppinfoitemcontent"+liveIndex).appendChild(div);
+		
+					div = document.createElement("div");
+					div.setAttribute("class","container");
+					div.setAttribute("id","modalsuppmodalcontainer" + liveIndex);
+					document.getElementById("modalsuppinfoitemcontentbody"+liveIndex).appendChild(div);
+		
+					div = document.createElement("h1");
+					div.setAttribute("class","text-center");
+					div.setAttribute("id","modalsupparticletitle" + liveIndex);
+					document.getElementById("modalsuppmodalcontainer"+liveIndex).appendChild(div);
+		
+					document.getElementById("modalsupparticletitle" + liveIndex).innerHTML = "Etes-vous sur de vouloir supprimer " + noms[liveIndex] + " ?";
+
+					
+					div = document.createElement("button");
+					div.setAttribute("type","button");
+					div.setAttribute("data-dismiss","modal");
+					div.setAttribute("class","btn btn-secondary");
+					div.setAttribute("id","modalsuppbuttonclosemodal" + liveIndex);
+					document.getElementById("modalsuppinfoitemcontent" + liveIndex).appendChild(div);
+
+					document.getElementById("modalsuppbuttonclosemodal" + liveIndex).innerHTML = "Non";
+					
+					div = document.createElement("button");
+					div.setAttribute("type","button");
+					div.setAttribute("onclick","supprimer("+ids[liveIndex]+")");
+					div.setAttribute("class","btn btn-danger");
+					div.setAttribute("id","modalsuppbuttonsupp" + liveIndex);
+					document.getElementById("modalsuppinfoitemcontent" + liveIndex).appendChild(div);
+
+					document.getElementById("modalsuppbuttonsupp" + liveIndex).innerHTML = "Oui, je veux supprimer";
+					//////////////fin modal verification supprimer
+				
 				}
 			}
 
@@ -420,12 +483,73 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					
 					div = document.createElement("button");
 					div.setAttribute("type","button");
-					div.setAttribute("onclick","supprimer(" + liveIndex + ")");
 					div.setAttribute("class","btn btn-warning");
 					div.setAttribute("id","buttons" + liveIndex);
+
+					div.setAttribute("data-toggle","modal");
+					div.setAttribute("data-target","#suppinfoitem" + liveIndex);
+
 					document.getElementById("card"+liveIndex).appendChild(div);
 
 					document.getElementById("buttons" + liveIndex).innerHTML = "Supprimer<br><br>";
+
+
+					////////modal verification supprimer
+					div = document.createElement("div");
+					div.setAttribute("class","modal fade");
+					div.setAttribute("id","suppinfoitem" + liveIndex);
+					div.setAttribute("role","dialog");
+					div.setAttribute("aria-labelledby","exampleModalLabel");
+					div.setAttribute("aria-hidden","true");
+					document.getElementById("card"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-dialog modal-lg");
+					div.setAttribute("role","document");
+					div.setAttribute("id","suppinfoitemdialog" + liveIndex);
+					document.getElementById("suppinfoitem"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-content");
+					div.setAttribute("id","suppinfoitemcontent" + liveIndex);
+					document.getElementById("suppinfoitemdialog"+liveIndex).appendChild(div);
+
+					div = document.createElement("div");
+					div.setAttribute("class","modal-body");
+					div.setAttribute("id","suppinfoitemcontentbody" + liveIndex);
+					document.getElementById("suppinfoitemcontent"+liveIndex).appendChild(div);
+		
+					div = document.createElement("div");
+					div.setAttribute("class","container");
+					div.setAttribute("id","suppmodalcontainer" + liveIndex);
+					document.getElementById("suppinfoitemcontentbody"+liveIndex).appendChild(div);
+		
+					div = document.createElement("h1");
+					div.setAttribute("class","text-center");
+					div.setAttribute("id","supparticletitle" + liveIndex);
+					document.getElementById("suppmodalcontainer"+liveIndex).appendChild(div);
+		
+					document.getElementById("supparticletitle" + liveIndex).innerHTML = "Etes-vous sur de vouloir supprimer " + noms[liveIndex] + " ?";
+
+					
+					div = document.createElement("button");
+					div.setAttribute("type","button");
+					div.setAttribute("data-dismiss","modal");
+					div.setAttribute("class","btn btn-secondary");
+					div.setAttribute("id","suppbuttonclosemodal" + liveIndex);
+					document.getElementById("suppinfoitemcontent" + liveIndex).appendChild(div);
+
+					document.getElementById("suppbuttonclosemodal" + liveIndex).innerHTML = "Non";
+					
+					div = document.createElement("button");
+					div.setAttribute("type","button");
+					div.setAttribute("onclick","supprimer("+ids[liveIndex]+")");
+					div.setAttribute("class","btn btn-danger");
+					div.setAttribute("id","suppbuttonsupp" + liveIndex);
+					document.getElementById("suppinfoitemcontent" + liveIndex).appendChild(div);
+
+					document.getElementById("suppbuttonsupp" + liveIndex).innerHTML = "Oui, je veux supprimer";
+					//////////////fin modal verification supprimer
 				}
 			}
 			liveIndex++;
@@ -490,12 +614,10 @@ function reloadPage(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,d
 		canceled = false;
 		corresponding = false;
 	}
-	
-	//location.reload();
 }
 
 function supprimer(index)
 {
-	//var sql = "delete from item where item.id = " + index;
-	console.log("Je supprimer l'item " + index);
+	var sql = "delete from item where item.id = " + index;
+	$.post('../PHP-POST.php', {'data' : sql}, (data) => {location.reload();})
 }
