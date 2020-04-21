@@ -322,13 +322,6 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 				
 				if((session_type=="admin")||((session_type=="vendeur")&&(session_id==vendeurIDs[liveIndex])))
 				{
-					div = document.createElement("button");
-					div.setAttribute("type","button");
-					div.setAttribute("class","btn btn-secondary");
-					div.setAttribute("id","buttonmmodal" + liveIndex);
-					document.getElementById("modalcard-body"+liveIndex).appendChild(div);
-
-					document.getElementById("buttonmmodal" + liveIndex).innerHTML = "Modifier<br><br>";
 					
 					div = document.createElement("button");
 					div.setAttribute("type","button");
@@ -478,15 +471,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 				}
 				
 				if((session_type=="admin")||((session_type=="vendeur")&&(session_id==vendeurIDs[liveIndex])))
-				{
-					div = document.createElement("button");
-					div.setAttribute("type","button");
-					div.setAttribute("class","btn btn-secondary");
-					div.setAttribute("id","buttonm" + liveIndex);
-					document.getElementById("card"+liveIndex).appendChild(div);
-
-					document.getElementById("buttonm" + liveIndex).innerHTML = "Modifier<br><br>";
-					
+				{	
 					div = document.createElement("button");
 					div.setAttribute("type","button");
 					div.setAttribute("class","btn btn-warning");
