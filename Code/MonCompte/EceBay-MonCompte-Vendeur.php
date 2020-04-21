@@ -9,17 +9,20 @@
 -->
 
 <?php
-
 session_start();
-
 if (!empty($_SESSION["type"])) {
-    if ($_SESSION["type"] == "vendeur") {
-        echo '<script type="text/javascript">',
-             'var id = ' . $_SESSION["id"] . ';',
-             '</script>';
-    } else die();
+    echo '<script type="text/javascript">',
+         'var id = ' . $_SESSION["id"] . ';',
+         'var session_type =\'' . $_SESSION["type"] . '\';',
+         'var session_background =\'' . $_SESSION["back"] . '\';',
+         'var session_email =\'' . $_SESSION["email"] . '\';',
+         'var nobody = false;',
+         '</script>';
+} else { 
+    echo '<script type="text/javascript">',
+         'var nobody = true;',
+         '</script>';
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +62,8 @@ if (!empty($_SESSION["type"])) {
                     <li class="nav-item active">
                         <a class="nav-link" href="EceBay-MonCompte.php">Votre compte</a>
                     </li>
+                    <li class="nav-item">
+                        <a id="navvendre" class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="deconnexion.php">Déconnexion</a>
