@@ -82,15 +82,10 @@ if (!empty($_SESSION["type"])) {
                 </ul>
             </div>
         </nav>
-        <div class="container" id="main-container">
+        <div class="container">
             <br><br>
-            <h1 class="text-center">Navigation</h1>
-            <div class="form-row" style="margin: 15px;">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
-                </form>
-            </div>
+            <h1 class="text-center" style="background-color: lightgrey">Navigation</h1>
+
             <div>
                 <div>
                     <label class="btn btn-info active">
@@ -106,23 +101,26 @@ if (!empty($_SESSION["type"])) {
                         <input type="checkbox" id="encherecheck" checked> Enchères
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" id="directcheck" checked> Meilleure Offre
+                        <input type="checkbox" id="negociationcheck" checked> Meilleure Offre
                     </label>
                     <label class="btn btn-info active">
-                        <input type="checkbox" id="achatcheck" checked> Achat immédiat
+                        <input type="checkbox" id="directcheck" checked> Achat immédiat
                     </label>
                 </div>
             </div>
             <div>
                 <form style="margin: 10px;">
-                    <button type="button" onclick="filtrer()" class="btn btn-primary">Filtrer</button>
+                    <button type="button" onclick="loadItems(true)" class="btn btn-primary">Filtrer</button>
                 </form>
+            </div>
+            <div id="main-container">
+                
             </div>
             
         </div>
     </body>
     <script>
-        loadItems();
+        loadItems(false);
     </script>
 </html>
 

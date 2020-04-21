@@ -1,4 +1,6 @@
-function loadItems() {
+function loadItems(filtrer) {
+	var i = 0;
+
 	//load background image if connected
 
 	if(!nobody)
@@ -103,8 +105,14 @@ function loadItems() {
 									}
 								}
 
-								generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex);
-
+								if(filtrer)
+								{
+									reloadPage(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex);
+								}
+								else
+								{
+									generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex);
+								}
 							}
 						});
 					}
@@ -112,14 +120,6 @@ function loadItems() {
 			});
 		}
 	});
-}
-
-function filtrer() {
-	var i = 0;
-	while(document.getElementById("row"+i)) {
-		document.getElementById("row"+i).remove();
-		i++;
-	}
 }
 
 function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex) {
@@ -307,6 +307,20 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 				}
 			}
 
+			div = document.createElement("div");
+			div.setAttribute("class","modal-footer");
+			div.setAttribute("id","infoitemcontentfooter" + liveIndex);
+			document.getElementById("infoitemcontent" + liveIndex).appendChild(div);
+
+			div = document.createElement("button");
+			div.setAttribute("type","button");
+			div.setAttribute("data-dismiss","modal");
+			div.setAttribute("class","btn btn-secondary");
+			div.setAttribute("id","buttonclosemodal" + liveIndex);
+			document.getElementById("infoitemcontent" + liveIndex).appendChild(div);
+
+			document.getElementById("buttonclosemodal" + liveIndex).innerHTML = "Fermer";
+
 			///////////////////////////////fin modal
 
 			//expiration
@@ -396,4 +410,59 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 function ajust(str) {
 	if (str == "NULL") return "";
 	return str;
+}
+
+function reloadPage(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,directs,negociations,prixDirects,prixEncheres,images,categories,nombreArticles,nombreRows,nombreCols,nombreArticlesLeft,div,liveIndex) {
+	var categs = []
+	categs[0] = "Ferraille ou Tresor";
+	categs[1] = "Bon pour le Musee";
+	categs[2] = "Accessoire VIP";
+	var canceled = false;
+	var corresponding = false;
+
+	for(var i=0;i<nombreArticles;i++)
+	{
+		if((!document.getElementById("feraillecheck").checked)&&(categories[i]==categs[0]))
+		{
+			canceled = true;
+		}
+		else if((!document.getElementById("boncheck").checked)&&(categories[i]==categs[1]))
+		{
+			canceled = true;
+		}
+		else if((!document.getElementById("vipcheck").checked)&&(categories[i]==categs[2]))
+		{
+			canceled = true;
+		}
+		if((document.getElementById("encherecheck").checked)&&(encheres[i]==1))
+		{
+			corresponding = true;
+		}
+		if((document.getElementById("directcheck").checked)&&(directs[i]==1))
+		{
+			corresponding = true;
+		}
+		if((document.getElementById("negociationcheck").checked)&&(negociations[i]==1))
+		{
+			corresponding = true;
+		}
+
+		if(!corresponding)
+		{
+			canceled = true;
+		}
+
+		if(!canceled)
+		{
+			document.getElementById("card"+i).style.display = ""
+		}
+		else
+		{
+			document.getElementById("card"+i).style.display = "none"
+		}
+		canceled = false;
+		corresponding = false;
+	}
+	
+	//location.reload();
 }
