@@ -39,7 +39,7 @@ function loadItems(filtrer) {
 		document.getElementById("navpanier").style.display = "none";
 	}
 
-	sql="select count(id) from item"
+	sql="select count(id) from item where item.vendu=0"
 
 	var nombreArticles = 0;
 	var nombreRows = 0;
@@ -73,7 +73,7 @@ function loadItems(filtrer) {
 			nombreArticlesLeft=ajust(arr[0]);
 			nombreRows=Math.floor(nombreArticles/3);
 
-			sql="select * from item"
+			sql="select * from item where item.vendu=0"
 
 			$.get("../PHP-GET.php", {"data" : sql}, (data) => {
 				if (data.match("Error :") != null) { // Error. Reload and ask to connect again ?
