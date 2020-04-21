@@ -91,7 +91,7 @@ if (!empty($_SESSION["type"])) {
                     <option>Accessoire VIP</option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div id="vendeur-div" class="form-group">
                     <label for="exampleInputEmail1">Vendeur</label>
                     <input id="vendeur-input" type="text" class="form-control" placeholder="Id du vendeur">
                 </div>
@@ -156,7 +156,7 @@ if (!empty($_SESSION["type"])) {
                 $("#vendre").hide();
             } else if (type == "vendeur") {
                 $("#admin").hide();
-                $("#vendeur-input").hide();
+                $("#vendeur-div").hide();
             }
         </script>
     </body>

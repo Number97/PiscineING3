@@ -294,6 +294,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-primary");
 						div.setAttribute("id","buttonemodal" + liveIndex);
+						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(prixEncheres[liveIndex]+1)+", this);");
 						document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 						document.getElementById("buttonemodal" + liveIndex).innerHTML = "Enchérir<br>" + prixEncheres[liveIndex] + " €";
@@ -304,6 +305,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-success");
 						div.setAttribute("id","buttondmodal" + liveIndex);
+						div.setAttribute("onclick","panierDirect("+ids[liveIndex]+","+prixDirects[liveIndex]+", this);");
 						document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 						document.getElementById("buttondmodal" + liveIndex).innerHTML = "Achat Immédiat<br>" + prixDirects[liveIndex] + " €";
@@ -314,6 +316,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-danger");
 						div.setAttribute("id","buttonnmodal" + liveIndex);
+						div.setAttribute("onclick","panierOffre("+ids[liveIndex]+","+100+", this);");
 						document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 						document.getElementById("buttonnmodal" + liveIndex).innerHTML = "Meilleure Offre<br><br>";
@@ -444,6 +447,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-primary");
 						div.setAttribute("id","buttone" + liveIndex);
+						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(prixEncheres[liveIndex]+1)+", this);");
 						document.getElementById("card"+liveIndex).appendChild(div);
 
 						document.getElementById("buttone" + liveIndex).innerHTML = "Enchérir<br>" + prixEncheres[liveIndex] + " €";
@@ -454,6 +458,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-success");
 						div.setAttribute("id","buttond" + liveIndex);
+						div.setAttribute("onclick","panierDirect("+ids[liveIndex]+","+prixDirects[liveIndex]+", this);");
 						document.getElementById("card"+liveIndex).appendChild(div);
 
 						document.getElementById("buttond" + liveIndex).innerHTML = "Achat Immédiat<br>" + prixDirects[liveIndex] + " €";
@@ -464,6 +469,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-danger");
 						div.setAttribute("id","buttonn" + liveIndex);
+						div.setAttribute("onclick","panierOffre("+ids[liveIndex]+","+100+", this);");
 						document.getElementById("card"+liveIndex).appendChild(div);
 
 						document.getElementById("buttonn" + liveIndex).innerHTML = "Meilleure Offre<br><br>";
@@ -611,4 +617,28 @@ function supprimer(index)
 {
 	var sql = "delete from item where item.id = " + index;
 	$.post('../PHP-POST.php', {'data' : sql}, (data) => {location.reload();})
+}
+
+function panierDirect(ind, prix, el) {
+	el.disabled = true;
+	document.getElementById("buttond" + ind).disabled = true;
+
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'direct', " + prix + ");";
+	$.post('../PHP-POST.php', {'data': sql});
+}
+
+function panierEnchere(ind, prix, el) {
+	el.disabled = true;
+	document.getElementById("buttone" + ind).disabled = true;
+	
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'enchere', " + prix + ");";
+	$.post('../PHP-POST.php', {'data': sql});
+}
+
+function panierOffre(ind, prix, el) {
+	el.disabled = true;
+	document.getElementById("buttonn" + ind).disabled = true;
+
+	var sql = "insert into panier values (null, " + session_id + ", " + ind + ", 'offre', " + prix + ");";
+	$.post('../PHP-POST.php', {'data': sql});
 }

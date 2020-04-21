@@ -1,34 +1,43 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:8889
--- Generation Time: Apr 21, 2020 at 04:03 PM
--- Server version: 5.5.42
--- PHP Version: 5.6.10
+-- Client :  127.0.0.1
+-- Généré le :  Mar 21 Avril 2020 à 21:52
+-- Version du serveur :  5.6.17
+-- Version de PHP :  5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
--- Database: `databaseprojectpiscine`
+-- Base de données :  `databaseprojectpiscine`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Structure de la table `admin`
 --
 
-CREATE TABLE `admin` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `admin` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Mail` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `MotDePasse` varchar(255) COLLATE latin1_general_cs NOT NULL,
-  `Pseudo` varchar(255) COLLATE latin1_general_cs NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Pseudo` varchar(255) COLLATE latin1_general_cs NOT NULL,
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Mail` (`Mail`),
+  UNIQUE KEY `Pseudo` (`Pseudo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `admin`
+-- Contenu de la table `admin`
 --
 
 INSERT INTO `admin` (`Id`, `Mail`, `MotDePasse`, `Pseudo`) VALUES
@@ -38,11 +47,11 @@ INSERT INTO `admin` (`Id`, `Mail`, `MotDePasse`, `Pseudo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Structure de la table `client`
 --
 
-CREATE TABLE `client` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `client` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Mail` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `MotDePasse` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Nom` varchar(255) COLLATE latin1_general_cs NOT NULL,
@@ -59,11 +68,13 @@ CREATE TABLE `client` (
   `Expiration` date NOT NULL,
   `CodeSecurite` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Background` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
-  `Active` bit(1) NOT NULL DEFAULT b'1'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Active` bit(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Mail` (`Mail`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `client`
+-- Contenu de la table `client`
 --
 
 INSERT INTO `client` (`Id`, `Mail`, `MotDePasse`, `Nom`, `Prenom`, `Adresse1`, `Adresse2`, `Ville`, `CodePostal`, `Pays`, `Telephone`, `TypeCarte`, `NumeroCarte`, `NomSurCarte`, `Expiration`, `CodeSecurite`, `Background`, `Active`) VALUES
@@ -74,37 +85,43 @@ INSERT INTO `client` (`Id`, `Mail`, `MotDePasse`, `Nom`, `Prenom`, `Adresse1`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `commande`
+-- Structure de la table `commande`
 --
 
-CREATE TABLE `commande` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `commande` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Client` int(11) NOT NULL,
-  `Item` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Item` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `commande_fk_client` (`Client`),
+  KEY `commande_fk_item` (`Item`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `enchere`
+-- Structure de la table `enchere`
 --
 
-CREATE TABLE `enchere` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `enchere` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Item` int(11) NOT NULL,
   `Enchereur` int(11) NOT NULL,
   `Date` datetime NOT NULL,
-  `Prix` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Prix` float NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `Item` (`Item`),
+  KEY `Enchereur` (`Enchereur`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `item`
+-- Structure de la table `item`
 --
 
-CREATE TABLE `item` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `item` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Description` mediumtext COLLATE latin1_general_cs NOT NULL,
   `Vendeur` int(11) NOT NULL,
@@ -120,11 +137,14 @@ CREATE TABLE `item` (
   `PrixVente` float DEFAULT NULL,
   `TypeVente` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
   `Image` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
-  `Categorie` varchar(255) COLLATE latin1_general_cs NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Categorie` varchar(255) COLLATE latin1_general_cs NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `Vendeur` (`Vendeur`) USING BTREE,
+  KEY `Acheteur` (`Acheteur`) USING BTREE
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=35 ;
 
 --
--- Dumping data for table `item`
+-- Contenu de la table `item`
 --
 
 INSERT INTO `item` (`Id`, `Nom`, `Description`, `Vendeur`, `Acheteur`, `Vendu`, `Upload`, `Expiration`, `Enchere`, `Direct`, `Negociation`, `PrixDirect`, `PrixInitial`, `PrixVente`, `TypeVente`, `Image`, `Categorie`) VALUES
@@ -153,40 +173,49 @@ INSERT INTO `item` (`Id`, `Nom`, `Description`, `Vendeur`, `Acheteur`, `Vendu`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `negociation`
+-- Structure de la table `negociation`
 --
 
-CREATE TABLE `negociation` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `negociation` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Etape` int(11) NOT NULL,
   `Proposition` bit(1) NOT NULL DEFAULT b'1',
   `Client` int(11) DEFAULT NULL,
   `Vendeur` int(11) DEFAULT NULL,
   `Prix` float DEFAULT NULL,
   `Accepete` bit(1) NOT NULL DEFAULT b'0',
-  `Item` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Item` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `negociation_fk_client` (`Client`),
+  KEY `negociation_fk_vendeur` (`Vendeur`),
+  KEY `negociation_fk_item` (`Item`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `panier`
+-- Structure de la table `panier`
 --
 
-CREATE TABLE `panier` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `panier` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Client` int(11) NOT NULL,
-  `Item` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Item` int(11) NOT NULL,
+  `type` varchar(255) COLLATE latin1_general_cs NOT NULL,
+  `prix` float NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `panier_fk_client` (`Client`),
+  KEY `panier_fk_item` (`Item`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vendeur`
+-- Structure de la table `vendeur`
 --
 
-CREATE TABLE `vendeur` (
-  `Id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `vendeur` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Mail` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `MotDePasse` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Nom` varchar(255) COLLATE latin1_general_cs NOT NULL,
@@ -194,11 +223,13 @@ CREATE TABLE `vendeur` (
   `BIC` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `IBAN` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Background` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
-  `Active` bit(1) NOT NULL DEFAULT b'1'
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+  `Active` bit(1) NOT NULL DEFAULT b'1',
+  PRIMARY KEY (`Id`),
+  UNIQUE KEY `Mail` (`Mail`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `vendeur`
+-- Contenu de la table `vendeur`
 --
 
 INSERT INTO `vendeur` (`Id`, `Mail`, `MotDePasse`, `Nom`, `Prenom`, `BIC`, `IBAN`, `Background`, `Active`) VALUES
@@ -207,143 +238,32 @@ INSERT INTO `vendeur` (`Id`, `Mail`, `MotDePasse`, `Nom`, `Prenom`, `BIC`, `IBAN
 (3, 'michel.jean@edu.ece.fr', '123456', 'Jean', 'Michel', 'AKABFREE', 'FR11 9381 5431 8457 7354 345', '../Backgrounds/Abstract 1.jpeg', b'1');
 
 --
--- Indexes for dumped tables
+-- Contraintes pour les tables exportées
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `Mail` (`Mail`),
-  ADD UNIQUE KEY `Pseudo` (`Pseudo`);
-
---
--- Indexes for table `client`
---
-ALTER TABLE `client`
-  ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `Mail` (`Mail`);
-
---
--- Indexes for table `commande`
---
-ALTER TABLE `commande`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `commande_fk_client` (`Client`),
-  ADD KEY `commande_fk_item` (`Item`);
-
---
--- Indexes for table `enchere`
---
-ALTER TABLE `enchere`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `Item` (`Item`),
-  ADD KEY `Enchereur` (`Enchereur`);
-
---
--- Indexes for table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `Vendeur` (`Vendeur`) USING BTREE,
-  ADD KEY `Acheteur` (`Acheteur`) USING BTREE;
-
---
--- Indexes for table `negociation`
---
-ALTER TABLE `negociation`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `negociation_fk_client` (`Client`),
-  ADD KEY `negociation_fk_vendeur` (`Vendeur`),
-  ADD KEY `negociation_fk_item` (`Item`);
-
---
--- Indexes for table `panier`
---
-ALTER TABLE `panier`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `panier_fk_client` (`Client`),
-  ADD KEY `panier_fk_item` (`Item`);
-
---
--- Indexes for table `vendeur`
---
-ALTER TABLE `vendeur`
-  ADD PRIMARY KEY (`Id`),
-  ADD UNIQUE KEY `Mail` (`Mail`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `client`
---
-ALTER TABLE `client`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- AUTO_INCREMENT for table `commande`
---
-ALTER TABLE `commande`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `enchere`
---
-ALTER TABLE `enchere`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `item`
---
-ALTER TABLE `item`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `negociation`
---
-ALTER TABLE `negociation`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `panier`
---
-ALTER TABLE `panier`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `vendeur`
---
-ALTER TABLE `vendeur`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `commande`
+-- Contraintes pour la table `commande`
 --
 ALTER TABLE `commande`
   ADD CONSTRAINT `commande_fk_client` FOREIGN KEY (`Client`) REFERENCES `client` (`Id`),
   ADD CONSTRAINT `commande_fk_item` FOREIGN KEY (`Item`) REFERENCES `item` (`Id`);
 
 --
--- Constraints for table `enchere`
+-- Contraintes pour la table `enchere`
 --
 ALTER TABLE `enchere`
   ADD CONSTRAINT `enchere_fk_enchereur` FOREIGN KEY (`Enchereur`) REFERENCES `client` (`Id`),
   ADD CONSTRAINT `enchere_fk_item` FOREIGN KEY (`Item`) REFERENCES `item` (`Id`);
 
 --
--- Constraints for table `item`
+-- Contraintes pour la table `item`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `item_fk_vendeur` FOREIGN KEY (`Vendeur`) REFERENCES `vendeur` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `item_fk_acheteur` FOREIGN KEY (`Acheteur`) REFERENCES `client` (`Id`);
 
 --
--- Constraints for table `negociation`
+-- Contraintes pour la table `negociation`
 --
 ALTER TABLE `negociation`
   ADD CONSTRAINT `negociation_fk_client` FOREIGN KEY (`Client`) REFERENCES `client` (`Id`),
@@ -351,8 +271,12 @@ ALTER TABLE `negociation`
   ADD CONSTRAINT `negociation_fk_vendeur` FOREIGN KEY (`Vendeur`) REFERENCES `vendeur` (`Id`);
 
 --
--- Constraints for table `panier`
+-- Contraintes pour la table `panier`
 --
 ALTER TABLE `panier`
   ADD CONSTRAINT `panier_fk_client` FOREIGN KEY (`Client`) REFERENCES `client` (`Id`),
   ADD CONSTRAINT `panier_fk_item` FOREIGN KEY (`Item`) REFERENCES `item` (`Id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

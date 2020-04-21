@@ -126,3 +126,8 @@ function toggle(el) {
 		}
 	}
 }
+
+/*
+	Sources:
+	https://www.taniarascia.com/how-to-upload-files-to-a-server-with-plain-javascript-and-php/
+*/
