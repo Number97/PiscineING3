@@ -1,6 +1,6 @@
 function loadItems()
 {
-	
+	//chargement backgrounds et boutons
 	if(!nobody)
 	{
 		if((session_type=="acheteur")||(session_type=="vendeur"))

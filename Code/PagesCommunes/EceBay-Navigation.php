@@ -53,31 +53,22 @@ if (!empty($_SESSION["type"])) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.php">Accueil</a>
+                        <a class="nav-link" style="font-size: 20px" href="EceBay-Accueil.php">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="EceBay-Navigation.php">Navigation</a>
+                        <a class="nav-link active" href="../PagesCommunes/EceBay-Navigation.php">Navigation</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Acheteur/EceBay-Panier.php">Panier
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Acheteur)</p>
-                        </a>
+                        <a id="navpanier" class="nav-link" href="../Acheteur/EceBay-Panier.php">Panier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre
-                            <br>
-                            <p class="navdescription">(si connecté en tant que Vendeur)</p>
-                        </a>
+                        <a id="navvendre" class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Admin/EceBay-Admin.php">Admin
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Admin)</p>
-                        </a>
+                        <a id="navadmin" class="nav-link" href="../Admin/EceBay-Admin.php">Admin</a>
                     </li>
                 </ul>
             </div>

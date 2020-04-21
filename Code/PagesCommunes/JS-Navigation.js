@@ -13,6 +13,24 @@ function loadItems(filtrer) {
 			document.body.style.backgroundSize = "100% 100%";
 			document.body.style.backgroundAttachment = "fixed";
 		}
+
+		if(session_type=="acheteur")
+		{
+			document.getElementById("navvendre").style.display = "none";
+			document.getElementById("navadmin").style.display = "none";
+		}
+
+		if(session_type=="vendeur")
+		{
+			document.getElementById("navpanier").style.display = "none";
+			document.getElementById("navadmin").style.display = "none";
+		}
+
+		if(session_type=="admin")
+		{
+			document.getElementById("navvendre").style.display = "none";
+			document.getElementById("navpanier").style.display = "none";
+		}
 	}
 
 	sql="select count(id) from item"
@@ -97,9 +115,9 @@ function loadItems(filtrer) {
 								{
 									for(var j=0;j<nbVendeurs;j++)
 									{
-										if(ajust(arr[0+4*j])==vendeurs[i])
+										if(ajust(arr[0+4*j])==vendeurIDs[i])
 										{
-											vendeurIDs[i] = ajust(arr[1+4*j]) + " " + ajust(arr[2+4*j]);
+											vendeurs[i] = ajust(arr[1+4*j]) + " " + ajust(arr[2+4*j]);
 											j=nbVendeurs;
 										}
 									}
@@ -249,6 +267,13 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 			document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 			document.getElementById("modalcard-text-expiration" + liveIndex).innerHTML = "Expire le: " + expirations[liveIndex];
+			
+			div = document.createElement("p");
+			div.setAttribute("class","card-text");
+			div.setAttribute("id","modalcard-text-vendor" + liveIndex);
+			document.getElementById("modalcard-body"+liveIndex).appendChild(div);
+
+			document.getElementById("modalcard-text-vendor" + liveIndex).innerHTML = "Par: " + vendeurs[liveIndex];
 
 			//boutons modal
 			if(!nobody)
@@ -287,7 +312,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					}
 				}
 				
-				if((session_type=="admin")||((session_type=="vendeur")&&(session_id!=vendeurIDs[liveIndex])))
+				if((session_type=="admin")||((session_type=="vendeur")&&(session_id==vendeurIDs[liveIndex])))
 				{
 					div = document.createElement("button");
 					div.setAttribute("type","button");
@@ -299,6 +324,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					
 					div = document.createElement("button");
 					div.setAttribute("type","button");
+					div.setAttribute("onclick","supprimer(" + liveIndex + ")");
 					div.setAttribute("class","btn btn-warning");
 					div.setAttribute("id","buttonsmodal" + liveIndex);
 					document.getElementById("modalcard-body"+liveIndex).appendChild(div);
@@ -382,7 +408,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					}
 				}
 				
-				if((session_type=="admin")||((session_type=="vendeur")&&(session_id!=vendeurIDs[liveIndex])))
+				if((session_type=="admin")||((session_type=="vendeur")&&(session_id==vendeurIDs[liveIndex])))
 				{
 					div = document.createElement("button");
 					div.setAttribute("type","button");
@@ -394,6 +420,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 					
 					div = document.createElement("button");
 					div.setAttribute("type","button");
+					div.setAttribute("onclick","supprimer(" + liveIndex + ")");
 					div.setAttribute("class","btn btn-warning");
 					div.setAttribute("id","buttons" + liveIndex);
 					document.getElementById("card"+liveIndex).appendChild(div);
@@ -465,4 +492,10 @@ function reloadPage(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,d
 	}
 	
 	//location.reload();
+}
+
+function supprimer(index)
+{
+	//var sql = "delete from item where item.id = " + index;
+	console.log("Je supprimer l'item " + index);
 }
