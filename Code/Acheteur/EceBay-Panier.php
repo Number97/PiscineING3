@@ -19,9 +19,7 @@ if (!empty($_SESSION["type"])) {
          'var nobody = false;',
          '</script>';
 } else { 
-    echo '<script type="text/javascript">',
-         'var nobody = true;',
-         '</script>';
+   die();
 }
 ?>
 
