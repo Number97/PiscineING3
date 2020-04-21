@@ -1,4 +1,9 @@
 function charger() {
+	document.body.style.backgroundImage = "url('"+session_background+"')";
+	document.body.style.backgroundRepeat = "no-repeat";
+	document.body.style.objectFit = "fill";
+	document.body.style.backgroundSize = "100% 100%";
+	document.body.style.backgroundAttachment = "fixed";
 	sql = "select * from Client where Client.id=" + id;
 
 	$.get("../PHP-GET.php", {"data" : sql}, (data) => {

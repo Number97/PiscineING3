@@ -63,14 +63,8 @@ if (!empty($_SESSION["type"])) {
                     <li class="nav-item">
                         <a class="nav-link" href="../MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
-                    <li class="nav-item">
-                        <a id="navpanier" class="nav-link" href="../Acheteur/EceBay-Panier.php">Panier</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="navvendre active" class="nav-link" href="../Vendeur/EceBay-Vendre.php">Vendre</a>
-                    </li>
                     <li class="nav-item active">
-                        <a id="navadmin" class="nav-link" href="../Admin/EceBay-Admin.php">Admin</a>
+                        <a id="navadmin active" class="nav-link" href="../Admin/EceBay-Admin.php">Admin</a>
                     </li>
                 </ul>
             </div>

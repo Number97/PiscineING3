@@ -104,7 +104,7 @@ if (!empty($_SESSION["type"])) {
                 <div class="row">
                     <div class="col-md-8"></div>
                     <div class="col-md-4">
-                        <a style="font-size: 50px;margin: auto;" class="btn btn-info" href="EceBay-Admin-AjouterAdmin.php" role="button">Ajouter un Article</a>
+                        <a style="font-size: 50px;margin: auto;" class="btn btn-info" href="../EceBay-AjouterUnItem.php" role="button">Ajouter un Article</a>
                     </div>
                 </div>
             </div>
