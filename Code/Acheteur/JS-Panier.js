@@ -423,13 +423,3 @@ function ajust(str) {
 	if (str == "NULL") return "";
 	return str;
 }
-
-function supprimer(index)
-{
-	var sql = "delete from item where item.id = " + index;
-	$.post('../PHP-POST.php', {'data' : sql}, (data) => {location.reload();})
-}
-
-function passerCommande(){
-
-}
