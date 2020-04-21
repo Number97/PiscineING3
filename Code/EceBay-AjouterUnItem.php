@@ -8,6 +8,24 @@
 
 -->
 
+<?php
+
+session_start();
+
+if (!empty($_SESSION["type"])) {
+    if ($_SESSION["type"] == "admin") {
+        echo '<script type="text/javascript">',
+             'var type="admin";',
+             '</script>';
+    } else if ($_SESSION["type"] == "vendeur") {
+        echo '<script type="text/javascript">',
+             'var type="vendeur";',
+             '</script>';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head> 
@@ -18,7 +36,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!---------------------JQuery - JavaScript--------------------->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
@@ -45,16 +63,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="MonCompte/EceBay-MonCompte.php">Votre compte</a>
                     </li>
-                    <li class="nav-item">
+                    <li id="vendre" class="nav-item">
                         <a class="nav-link" href="Vendeur/EceBay-Vendre.php">Vendre
-                            <br>
-                            <p class="navdescription">(si connecté en tant que Vendeur)</p>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li id="admin" class="nav-item">
                         <a class="nav-link" href="Admin/EceBay-Admin.php">Admin
-                            <br>
-                            <p class="navdescription">(si connecté en tant qu'Admin)</p>
                         </a>
                     </li>
                 </ul>
@@ -65,10 +79,12 @@
             <br><br><br>
             <h1 style="font-size: 80px;" class="text-center">Ajout d'un article</h1><br><br><br>
             <h1 class="text-center">Informations sur l'article</h1>
+            <h5 id="error-display" style="color: red"></h5>
+
             <form>
                 <div class="form-group col-md-4">
                   <label for="inputState">Catégorie</label>
-                  <select id="inputState" class="form-control">
+                  <select id="categorie-input" class="form-control">
                     <option selected>Choisir la catégorie...</option>
                     <option>Ferraille ou Trésor</option>
                     <option>Bon pour le Musée</option>
@@ -76,25 +92,25 @@
                   </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Nom</label>
-                    <input type="email" class="form-control" placeholder="Nom de l'item">
-                </div>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Mettez vos photos ici</label>
-                </div><br><br>
-                <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFile">
-                    <label class="custom-file-label" for="customFile">Mettez votre video ici (si disponible)</label>
+                    <label for="exampleInputEmail1">Vendeur</label>
+                    <input id="vendeur-input" type="text" class="form-control" placeholder="Id du vendeur">
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Nom</label>
+                    <input id="nom-input" type="text" class="form-control" placeholder="Nom de l'item">
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="file-input" accept=".jpeg" onchange="putOnLabel(this)">
+                    <label id="label-file" class="custom-file-label" for="customFile">Mettez votre photo ici (.jpeg)</label>
+                </div><br><br>
+                <div class="form-group">
                     <label for="exampleFormControlTextarea1">Description</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Les premiers 100 caractères de votre description apparaitront dans la page navigation."></textarea>
+                    <textarea class="form-control" id="description-input" rows="10" placeholder="Les premiers 100 caractères de votre description apparaitront dans la page navigation."></textarea>
                 </div>
             </form>
             <div class="row">
                 <div class="col-2">
-                    <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false">
+                    <button id="achat-input" type="button" class="btn btn-success" data-toggle="button" aria-pressed="false" onclick="toggle(this);" style="background-color: green">
                         <br>Achat Immediat<br><p style="font-size: 10px;">(CLiquez pour selectionner)</p>
                     </button>
                 </div>
@@ -102,14 +118,14 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Prix Achat immédiat</label>
-                            <input type="email" class="form-control" placeholder="Montant en €">
+                            <input disabled=true id="prix-achat-input" type="number" class="form-control" placeholder="Montant en €">
                         </div>
                     </form>
                 </div>
             </div><br>
             <div class="row">
                 <div class="col-2">
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false">
+                    <button id="enchere-input" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" onclick="toggle(this);" style="background-color: blue">
                         <br>Enchères<br><p style="font-size: 10px;">(CLiquez pour selectionner)</p>
                     </button>
                 </div>
@@ -117,14 +133,14 @@
                     <form>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Prix de départ</label>
-                            <input type="email" class="form-control" placeholder="Montant en €">
+                            <input disabled=true id="prix-enchere-input" type="text" class="form-control" placeholder="Montant en €">
                         </div>
                     </form>
                 </div>
             </div><br>
             <div class="row">
                 <div class="col-2">
-                    <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false">
+                    <button id="offre-input" type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" onclick="toggle(this);" style="background-color: red">
                         <br>Meilleure Offre<br><p style="font-size: 10px;">(CLiquez pour selectionner)</p>
                     </button>
                 </div>
@@ -135,6 +151,14 @@
 
             <br><br><br>
         </div>
+        <script type="text/javascript">
+            if (type == "admin") {
+                $("#vendre").hide();
+            } else if (type == "vendeur") {
+                $("#admin").hide();
+                $("#vendeur-input").hide();
+            }
+        </script>
     </body>
 </html>
 

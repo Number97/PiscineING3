@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: Apr 20, 2020 at 04:19 PM
+-- Generation Time: Apr 21, 2020 at 04:03 PM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.10
 
@@ -25,7 +25,7 @@ CREATE TABLE `admin` (
   `Mail` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `MotDePasse` varchar(255) COLLATE latin1_general_cs NOT NULL,
   `Pseudo` varchar(255) COLLATE latin1_general_cs NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 --
 -- Dumping data for table `admin`
@@ -121,25 +121,34 @@ CREATE TABLE `item` (
   `TypeVente` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
   `Image` varchar(255) COLLATE latin1_general_cs DEFAULT NULL,
   `Categorie` varchar(255) COLLATE latin1_general_cs NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1 COLLATE=latin1_general_cs;
 
 --
 -- Dumping data for table `item`
 --
 
 INSERT INTO `item` (`Id`, `Nom`, `Description`, `Vendeur`, `Acheteur`, `Vendu`, `Upload`, `Expiration`, `Enchere`, `Direct`, `Negociation`, `PrixDirect`, `PrixInitial`, `PrixVente`, `TypeVente`, `Image`, `Categorie`) VALUES
-(0, 'Mélange de métaux prêts à être recycles', 'Lorsqu’on parle de recyclage des métaux, on parle en fait du recyclage de l’acier et de l’aluminium.\r\nAbandonné dans la nature, l’acier rouille et met entre 5 et 10 ans à disparaître. Recyclé sous forme de ferrailles, il fournit 47% de l’acier français.\r\nL’aluminium est quant à lui 100% recyclable, et à l’instar du verre, on peut le recycler à l’infini ! Le recyclage de l’aluminium permet une économie énergétique non négligeable : 95% de l’énergie nécessaire à la production de l’aluminium première fusion !', 1, NULL, b'0', '2020-04-06', '2020-05-29', b'0', b'1', b'1', 5470, NULL, NULL, NULL, '../Articles/0000.jpeg', 'Ferraille ou Trésor'),
-(1, 'Trésor de Barbebleue', 'Barbebleue n''est pas un pirate comme les autres : il n''a ni jambe de bois, ni crochet, ni drapeau à tête de mort et surtout, il n''est pas méchant et déteste se battre.', 2, NULL, b'0', '2020-04-05', '2020-06-11', b'1', b'0', b'0', NULL, 50000, NULL, NULL, '../Articles/0001.jpeg', 'Ferraille ou Trésor'),
-(2, 'Chercheur de trésor', 'Profondeur souterraine de recherche de trésor de chercheur d''or de détecteur de métaux AS94423 d''or de profondeur de 5m.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 500, 200, NULL, NULL, '../Articles/0002.jpeg', 'Ferraille ou Trésor'),
-(3, 'Paquet de clous en cuivre', 'Avec sa longueur de 10 mm et sa tige de 0.4 mm de diamètre, le clou en cuivre est le plus petit clou fabriqué au XXème siècle en France. Il témoigne de tout notre savoir-faire français et peut server à régler certaines machines. Paquet de 600 clous.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'0', 2190, NULL, NULL, NULL, '../Articles/0003.jpeg', 'Ferraille ou Trésor'),
-(4, 'Dessin antiviral', 'Une œuvre d’art pour ne jamais oublier la crise pandémique de 2020 du coronavirus. Ça a changé le monde et a eu un impact global majeur.', 2, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'0', b'1', NULL, NULL, NULL, NULL, '../Articles/0004.jpeg', 'Bon pour le Musée'),
-(5, 'Peinture d’un cadre vide', 'Cette peinture de Hurgen Mogo est de dimension 50x50cm, fait en 1988, représente ce que vous voulez qu’elle représente. Laissez votre imagination se déchainer quand vous regardez cette peinture. A chaque fois que vous la regardez, ce que votre imagination vous montre peut être différent.', 2, NULL, b'0', '2020-04-08', '2020-07-27', b'1', b'1', b'0', 24000, 6000, NULL, NULL, '../Articles/0005.jpeg', 'Bon pour le Musée'),
-(6, 'Peinture Désert', 'Peinture 1,5mx1m, huile sur toile, 2020, Jean Krodrick', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'1', 430, NULL, NULL, NULL, '../Articles/0006.jpeg', 'Bon pour le Musée'),
-(7, 'Peinture port', 'Aujourd’hui, nous voulons voyager, mais les circonstances ne nous le permettent pas forcement. Cette peinture sera l’intermédiaire pour vous de pouvoir vous plonger dans des rêves tels qu’aller dans une croisière.', 1, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'0', b'0', NULL, 750, NULL, NULL, '../Articles/0007.jpeg', 'Bon pour le Musée'),
-(8, 'Montre Or 24K', 'La montre la plus chère, classe, et qui pèse le plus, est ici.', 1, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 180000, 40000, NULL, NULL, '../Articles/0008.jpeg', 'Accessoire VIP'),
-(9, 'Valise stylée', 'Cette valise est normale, mais avec le fait qu’elle est ROUGE, vous allez attirer l’attention de tout le monde !!!', 2, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'1', 53000000, NULL, NULL, NULL, '../Articles/0009.jpeg', 'Accessoire VIP'),
-(10, 'Pack 3 valises', 'Un bon pack de trois valises pour une famille entière. La combinaison de couleur n’est pas la meilleure, ce qui explique le prix baissé.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'0', b'0', NULL, 100, NULL, NULL, '../Articles/0010.jpeg', 'Accessoire VIP'),
-(11, 'La valise du futur', 'Cette valise a été endentée en 2050, et a été oubliée dans le présent par un voyageur dans le temps du futur.', 3, NULL, b'0', '2020-04-30', '2020-07-06', b'0', b'1', b'0', 2300, NULL, NULL, NULL, '../Articles/0011.jpeg', 'Accessoire VIP');
+(0, 'Melange de metaux prets a etre recycles', 'Lorsqu''on parle de recyclage des metaux, on parle en fait du recyclage de l''acier et de l''aluminium. Abandonne dans la nature, l''acier rouille et met entre 5 et 10 ans e disparaitre. Recycle sous forme de ferrailles, il fournit 47% de l''acier francais. L''aluminium est quant a lui 100% recyclable, et a l''instar du verre, on peut le recycler a l''infini ! Le recyclage de l''aluminium permet une economie energetique non negligeable : 95% de l''energie necessaire a la production de l''aluminium premiere fusion !', 1, NULL, b'0', '2020-04-06', '2020-05-29', b'0', b'1', b'0', 5470, NULL, NULL, NULL, '../Articles/0.jpeg', 'Ferraille ou Tresor'),
+(1, 'Tresor de Barbebleue', 'Barbebleue n''est pas un pirate comme les autres : il n''a ni jambe de bois, ni crochet, ni drapeau a tete de mort et surtout, il n''est pas mechant et deteste se battre.', 2, NULL, b'0', '2020-04-05', '2020-06-11', b'1', b'0', b'0', NULL, 50000, NULL, NULL, '../Articles/1.jpeg', 'Ferraille ou Tresor'),
+(2, 'Chercheur de tresor', 'Profondeur souterraine de recherche de tresor de chercheur d''or de detecteur de metaux AS94423 d''or de profondeur de 5m.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 500, 200, NULL, NULL, '../Articles/2.jpeg', 'Ferraille ou Tresor'),
+(3, 'Paquet de clous en cuivre', 'Avec sa longueur de 10 mm et sa tige de 0.4 mm de diametre, le clou en cuivre est le plus petit clou fabrique au XXeme siecle en France. Il temoigne de tout notre savoir-faire francais et peut servir a regler certaines machines. Paquet de 600 clous.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'0', 2190, NULL, NULL, NULL, '../Articles/3.jpeg', 'Ferraille ou Tresor'),
+(4, 'Dessin antiviral', 'Une oeuvre d''art pour ne jamais oublier la crise pandemique de 2020 du coronavirus. Ca a change le monde et a eu un impact global majeur.', 2, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'0', b'1', NULL, NULL, NULL, NULL, '../Articles/4.jpeg', 'Bon pour le Musee'),
+(5, 'Peinture d''un cadre vide', 'Cette peinture de Hurgen Mogo est de dimension 50x50cm, fait en 1988, represente ce que vous voulez qu''elle represente. Laissez votre imagination se dechainer quand vous regardez cette peinture. A chaque fois que vous la regardez, ce que votre imagination vous montre peut etre different.', 2, NULL, b'0', '2020-04-08', '2020-07-27', b'1', b'1', b'0', 24000, 6000, NULL, NULL, '../Articles/5.jpeg', 'Bon pour le Musee'),
+(6, 'Peinture Desert', 'Peinture 1,5mx1m, huile sur toile, 2020, Jean Krodrick', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'1', 430, NULL, NULL, NULL, '../Articles/6.jpeg', 'Bon pour le Musee'),
+(7, 'Peinture port', 'Aujourd''hui, nous voulons voyager, mais les circonstances ne nous le permettent pas forcement. Cette peinture sera l''intermediaire pour vous de pouvoir vous plonger dans des reves tels qu''aller dans une croisiere.', 1, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'0', b'0', NULL, 750, NULL, NULL, '../Articles/7.jpeg', 'Bon pour le Musee'),
+(8, 'Montre Or 24K', 'La montre la plus chere, classe, et qui pese le plus, est ici.', 1, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 180000, 40000, NULL, NULL, '../Articles/8.jpeg', 'Accessoire VIP'),
+(9, 'Valise stylee', 'Cette valise est normale, mais avec le fait qu''elle soit ROUGE, vous allez attirer l''attention de tout le monde !!!', 2, 1, b'1', '2020-04-08', '2020-04-11', b'0', b'1', b'1', 53000000, NULL, 36800700, 'Meilleure Offre', '../Articles/9.jpeg', 'Accessoire VIP'),
+(10, 'Pack 3 valises', 'Un bon pack de trois valises pour une famille entiere. La combinaison de couleur n''est pas la meilleure, ce qui explique le prix baisse.', 3, NULL, b'0', '2020-04-08', '2020-07-30', b'1', b'0', b'0', NULL, 100, NULL, NULL, '../Articles/10.jpeg', 'Accessoire VIP'),
+(11, 'La valise du futur', 'Cette valise a ete endentee en 2050, et a ete oubliee dans le present par un voyageur dans le temps du futur.', 3, NULL, b'0', '2020-04-30', '2020-07-06', b'0', b'1', b'0', 2300, NULL, NULL, NULL, '../Articles/11.jpeg', 'Accessoire VIP'),
+(13, 'Chercheur de tresor', 'Profondeur souterraine de recherche de tresor de chercheur d''or de detecteur de metaux AS94423 d''or de profondeur de 5m.', 3, 1, b'1', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 500, 200, 500, 'Achat Immediat', '../Articles/2.jpeg', 'Ferraille ou Tresor'),
+(14, 'Peinture Desert', 'Peinture 1,5mx1m, huile sur toile, 2020, Jean Krodrick', 3, 2, b'1', '2020-04-08', '2020-07-30', b'0', b'1', b'1', 430, NULL, 410, 'Meilleure Offre', '../Articles/6.jpeg', 'Bon pour le Musee'),
+(15, 'Melange de metaux prets a etre recycles', 'Lorsqu''on parle de recyclage des metaux, on parle en fait du recyclage de l''acier et de l''aluminium. Abandonne dans la nature, l''acier rouille et met entre 5 et 10 ans e disparaitre. Recycle sous forme de ferrailles, il fournit 47% de l''acier francais. L''aluminium est quant a lui 100% recyclable, et a l''instar du verre, on peut le recycler a l''infini ! Le recyclage de l''aluminium permet une economie energetique non negligeable : 95% de l''energie necessaire a la production de l''aluminium premiere fusion !', 1, 1, b'1', '2020-04-06', '2020-05-29', b'0', b'1', b'0', 5470, NULL, 5470, 'Achat Immediat', '../Articles/0.jpeg', 'Ferraille ou Tresor'),
+(18, 'Dessin antiviral', 'Une oeuvre d''art pour ne jamais oublier la crise pandemique de 2020 du coronavirus. Ca a change le monde et a eu un impact global majeur.', 2, 3, b'1', '2020-04-08', '2020-07-30', b'0', b'0', b'1', NULL, NULL, 42451, 'Meilleure Offre', '../Articles/4.jpeg', 'Bon pour le Musee'),
+(19, 'Dessin antiviral', 'Une oeuvre d''art pour ne jamais oublier la crise pandemique de 2020 du coronavirus. Ca a change le monde et a eu un impact global majeur.', 2, 2, b'1', '2020-04-08', '2020-06-22', b'0', b'0', b'1', NULL, NULL, 33, 'Meilleure Offre', '../Articles/4.jpeg', 'Bon pour le Musee'),
+(20, 'Chercheur de tresor', 'Profondeur souterraine de recherche de tresor de chercheur d''or de detecteur de metaux AS94423 d''or de profondeur de 5m.', 3, 2, b'1', '2020-04-08', '2020-07-30', b'1', b'1', b'0', 500, 200, 270, 'Enchere', '../Articles/2.jpeg', 'Ferraille ou Tresor'),
+(21, 'Paquet de clous en cuivre', 'Avec sa longueur de 10 mm et sa tige de 0.4 mm de diametre, le clou en cuivre est le plus petit clou fabrique au XXeme siecle en France. Il temoigne de tout notre savoir-faire francais et peut servir a regler certaines machines. Paquet de 600 clous.', 3, 1, b'1', '2020-04-08', '2020-07-30', b'0', b'1', b'0', 2190, NULL, 2190, 'Achat Immediat', '../Articles/3.jpeg', 'Ferraille ou Tresor'),
+(22, 'Melange de metaux prets a etre recycles', 'Lorsqu''on parle de recyclage des metaux, on parle en fait du recyclage de l''acier et de l''aluminium. Abandonne dans la nature, l''acier rouille et met entre 5 et 10 ans e disparaitre. Recycle sous forme de ferrailles, il fournit 47% de l''acier francais. L''aluminium est quant a lui 100% recyclable, et a l''instar du verre, on peut le recycler a l''infini ! Le recyclage de l''aluminium permet une economie energetique non negligeable : 95% de l''energie necessaire a la production de l''aluminium premiere fusion !', 1, 2, b'1', '2020-04-06', '2020-05-29', b'0', b'1', b'0', 5470, NULL, 5470, 'Achat Immediat', '../Articles/0.jpeg', 'Ferraille ou Tresor'),
+(23, 'Valise stylee', 'Cette valise est normale, mais avec le fait qu''elle soit ROUGE, vous allez attirer l''attention de tout le monde !!!', 2, NULL, b'0', '2020-04-08', '2020-07-30', b'0', b'1', b'1', 53000000, NULL, NULL, NULL, '../Articles/9.jpeg', 'Accessoire VIP');
 
 -- --------------------------------------------------------
 
@@ -194,7 +203,7 @@ CREATE TABLE `vendeur` (
 
 INSERT INTO `vendeur` (`Id`, `Mail`, `MotDePasse`, `Nom`, `Prenom`, `BIC`, `IBAN`, `Background`, `Active`) VALUES
 (1, 'pierre.herduin@edu.ece.fr', '123456', 'Herduin', 'Pierre', 'AXABFRPP', 'FR76 1234 5678 9012 3456 789', '../Backgrounds/Pink Clouds.jpeg', b'1'),
-(2, 'ernest.popovici@edu.ece.fr', '654321', 'Popovici', 'Ernest', 'AXABFRWW', 'FR66 2749 8130 0599 1298 333', '../Backgrounds/Green Clouds.jpeg', b'1'),
+(2, 'ernest.popovici@edu.ece.fr', '654321', 'Popovici', 'Ernest', 'AXABFRWW', 'FR66 2749 8130 0599 1298 333', '../Backgrounds/Abstract 1.jpeg', b'1'),
 (3, 'michel.jean@edu.ece.fr', '123456', 'Jean', 'Michel', 'AKABFREE', 'FR11 9381 5431 8457 7354 345', '../Backgrounds/Abstract 1.jpeg', b'1');
 
 --
@@ -272,7 +281,7 @@ ALTER TABLE `vendeur`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `client`
 --
@@ -292,7 +301,7 @@ ALTER TABLE `enchere`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `negociation`
 --
@@ -330,8 +339,8 @@ ALTER TABLE `enchere`
 -- Constraints for table `item`
 --
 ALTER TABLE `item`
-  ADD CONSTRAINT `item_fk_acheteur` FOREIGN KEY (`Acheteur`) REFERENCES `client` (`Id`),
-  ADD CONSTRAINT `item_fk_vendeur` FOREIGN KEY (`Vendeur`) REFERENCES `vendeur` (`Id`);
+  ADD CONSTRAINT `item_fk_vendeur` FOREIGN KEY (`Vendeur`) REFERENCES `vendeur` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `item_fk_acheteur` FOREIGN KEY (`Acheteur`) REFERENCES `client` (`Id`);
 
 --
 -- Constraints for table `negociation`
