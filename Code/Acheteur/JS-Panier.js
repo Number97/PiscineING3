@@ -460,4 +460,14 @@ function passerCommande() {
 			rows.splice(0, 6);
 		}
 	});
+
+	viderPanier();
+}
+
+function viderPanier() {
+	var sql = "delete from panier where panier.client = " + session_id;
+
+	$.post("../PHP-POST.php", {"data" : sql});
+
+	location.reload();
 }

@@ -106,6 +106,17 @@ if (!empty($_SESSION["type"])) {
                     </div>
                 </div>
             </div>
+            <br>
+            <br>
+            <br>
+            <div>
+                <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                        <button onclick="viderPanier()" style="font-size: 50px;margin: auto;" class="btn btn-info" role="button">Vider le panier</button>
+                    </div>
+                </div>
+            </div>
 
             <div>
                 <form style="margin: 10px;">
