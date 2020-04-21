@@ -125,6 +125,8 @@ if (!empty($_SESSION["type"])) {
             </div>
             <div id="main-container">
             </div>
+
+
         </div>
     </body>
     <script>
