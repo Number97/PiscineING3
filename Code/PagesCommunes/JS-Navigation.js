@@ -294,7 +294,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-primary");
 						div.setAttribute("id","buttonemodal" + liveIndex);
-						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(prixEncheres[liveIndex]+1)+", this);");
+						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(parseInt(prixEncheres[liveIndex])+1)+", this);");
 						document.getElementById("modalcard-body"+liveIndex).appendChild(div);
 
 						document.getElementById("buttonemodal" + liveIndex).innerHTML = "Enchérir<br>" + prixEncheres[liveIndex] + " €";
@@ -447,7 +447,7 @@ function generer(noms,descriptions,vendeurs,vendeurIDs,expirations,encheres,dire
 						div.setAttribute("type","button");
 						div.setAttribute("class","btn btn-primary");
 						div.setAttribute("id","buttone" + liveIndex);
-						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(prixEncheres[liveIndex]+1)+", this);");
+						div.setAttribute("onclick","panierEnchere("+ids[liveIndex]+","+(parseInt(prixEncheres[liveIndex])+1)+", this);");
 						document.getElementById("card"+liveIndex).appendChild(div);
 
 						document.getElementById("buttone" + liveIndex).innerHTML = "Enchérir<br>" + prixEncheres[liveIndex] + " €";

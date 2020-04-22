@@ -440,6 +440,7 @@ function passerCommande() {
 		while (rows.length > 1) {
 
 			var type = rows[3];
+			var bool = false;
 
 			if (type == "Achat Immediat") {
 
@@ -457,11 +458,14 @@ function passerCommande() {
 				$.post("../PHP-POST.php", {'data': sql});
 			}
 
+			// while (bool == false) {console.log("wait");};
+			console.log("go");
+
 			rows.splice(0, 6);
 		}
-	});
 
-	viderPanier();
+		viderPanier();
+	});
 }
 
 function viderPanier() {
@@ -472,3 +476,10 @@ function viderPanier() {
 	location.reload();
 }
 
+function sleep(milliseconds) {
+  const date = Date.now();
+  let currentDate = null;
+  do {
+    currentDate = Date.now();
+  } while (currentDate - date < milliseconds);
+}
