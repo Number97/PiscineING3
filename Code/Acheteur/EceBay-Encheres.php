@@ -40,10 +40,10 @@ if (!empty($_SESSION["type"])) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">        
 
         <!-------------------------Custom CSS-------------------------->
-        <link rel="stylesheet" type="text/css" href="EceBay-Panier.css">
+        <link rel="stylesheet" type="text/css" href="EceBay-Encheres.css">
 
         <!-------------------------Custom JS--------------------------->
-        <script src="JS-Panier.js" type="text/javascript"></script>
+        <script src="JS-Encheres.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -73,67 +73,9 @@ if (!empty($_SESSION["type"])) {
         </nav>
         <div class="container">
             <br><br>
-            <h1 class="text-center" style="background-color: lightgrey">Vos articles mis en ventes</h1>
-
-            <div>
-                <div>
-                    <label class="btn btn-info active">
-                        <input type="checkbox" id="feraillecheck" checked> Feraille ou Trésor
-                    </label>
-                    <label class="btn btn-info active">
-                        <input type="checkbox" id="boncheck" checked> Bon pour le Musée
-                    </label>
-                    <label class="btn btn-info active">
-                        <input type="checkbox" id="vipcheck" checked> Accessoire VIP
-                    </label>
-                    <label style="margin-left: 100px;" class="btn btn-info active">
-                        <input type="checkbox" id="encherecheck" checked> Enchères
-                    </label>
-                    <label class="btn btn-info active">
-                        <input type="checkbox" id="negociationcheck" checked> Meilleure Offre
-                    </label>
-                    <label class="btn btn-info active">
-                        <input type="checkbox" id="directcheck" checked> Achat immédiat
-                    </label>
-                </div>
-            </div>
-            
-            <div>
-                <div class="row">
-                    <div class="col-md-8"></div>
-                    <div class="col-md-4">
-                        <button onclick="passerCommande()" style="font-size: 50px;margin: auto;" class="btn btn-info" role="button">Passer la commande</button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div>
-                <div class="row">
-                    <div class="col-md-8"></div>
-                    <div class="col-md-4">
-                        <button onclick="viderPanier()" style="font-size: 50px;margin: auto;" class="btn btn-info" role="button">Vider le panier</button>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <form style="margin: 10px;">
-                    <button type="button" onclick="loadItemsEnVente(true)" class="btn btn-primary">Filtrer</button>
-                </form>
-            </div>
-            <div id="main-container">
-            </div>
-            <br>
-            <div>
-                <div class="row">
-                    <div class="col-md-8"></div>
-                    <div class="col-md-4">
-                        <a href="EceBay-Encheres.php" style="font-size: 50px;margin: auto;" class="btn btn-info" role="button">Mes encheres</a>
-                    </div>
-                </div>
-            </div><br><br><br><br>
-
-
+            <h1 class="text-center" style="background-color: lightgrey">Vos encheres en cours</h1>
+        </div>
+        <div id="main-container">
         </div>
     </body>
     <script>
