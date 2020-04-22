@@ -45,7 +45,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="EceBay-MonCompte.php">Votre compte</a>
                     </li>
-                    </li>
                 </ul>
             </div>
         </nav>

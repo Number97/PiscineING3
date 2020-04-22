@@ -71,6 +71,9 @@ if (!empty($_SESSION["type"])) {
                         <a class="nav-link" href="Admin/EceBay-Admin.php">Admin
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="MonCompte/deconnexion.php">Déconnexion</a>
+                    </li>
                 </ul>
             </div>
         </nav>

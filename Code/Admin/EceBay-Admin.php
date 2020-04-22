@@ -45,6 +45,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="EceBay-Admin.php">Admin<span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../MonCompte/deconnexion.php">Déconnexion</a>
+                    </li>
                 </ul>
             </div>
         </nav>
